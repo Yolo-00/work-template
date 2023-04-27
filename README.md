@@ -86,6 +86,6 @@ work-template
 ├─ package.json           # 依赖包管理
 ├─ README.md              # README 介绍
 ├─ tsconfig.json          # typescript 全局配置
-└─ vite.config.ts         # vite 全局配置文件
+├─ vite.config.ts         # vite 全局配置文件
 └─ yarn.lock              # 依赖包包版本锁
 ```
