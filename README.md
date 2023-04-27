@@ -1,18 +1,51 @@
-# Vue 3 + TypeScript + Vite
+# work-template
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 介绍 📖
 
-## Recommended IDE Setup
+work-template 一款基于 Vue3、TypeScript、Vite3、Pinia、Element-Plus 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、等功能。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### 项目功能 🔨
 
-## Type Support For `.vue` Imports in TS
+- 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
+- 采用 Vite3 作为项目开发、打包工具（配置 Gzip 打包、TSX 语法、跨域代理……）
+- 使用 Pinia 替代 Vuex，轻量、简单、易用， 集成 Pinia 持久化插件
+- 使用 TypeScript 对 Axios 整个二次封装 （请求拦截、常用请求封装……）
+- 使用 VueRouter 进行路由权限拦截、路由懒加载
+- 常用自定义指令开发（权限、复制、水印、拖拽、节流、防抖、长按……）
+- 使用 Prettier 统一格式化代码，集成 Eslint、Stylelint 代码校验规范
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### 安装使用步骤 📔
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- **Clone：**
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```text
+# Gitee
+git clone https://gitee.com/guo__Mr/work-template.git
+```
+
+- **Install：**
+
+```text
+yarn install
+
+# yarn install 安装失败，请升级 nodejs 到 16 以上
+```
+
+- **Run：**
+
+```text
+yarn dev
+```
+
+- **Build：**
+
+```text
+# 开发环境
+yarn build:dev
+
+# 测试环境
+yarn build:test
+
+# 生产环境
+yarn build:pro
+```

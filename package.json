@@ -1,8 +1,8 @@
 {
-	"name": "template-work",
+	"name": "work-template",
 	"private": true,
 	"version": "0.0.0",
-	"description": "template-work模板",
+	"description": "work-template框架",
 	"scripts": {
 		"dev": "vite",
 		"build:dev": "vue-tsc --noEmit && vite build --mode development",
