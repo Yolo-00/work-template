@@ -1,58 +1,51 @@
-$theme_background: #E04141; //项目主题色
-$global_size: 32rpx; //全局字体大小
-$white_color: #ffffff; //全局白色字体
-$black_color: #333; //全局黑色字体
-
-// @include
-
-//字体(字体大小,字体颜色,文本字体,字体粗细)
-@mixin font_size($text_size, $text_color, $text_font, $text_weight) {
-  font-size: $text_size;
-  color: $text_color;
-  font-family: $text_font;
-  font-weight: $text_weight;
-}
-
-//grid布局(分几分,每份的宽度,上线间距)
-@mixin grid_body($number, $widht, $gap) {
-  display: grid;
-  grid-template-columns: repeat($number, $widht);
-  grid-row-gap: $gap;
-  justify-content: space-between;
-}
-
-//多行文本省略(行数)
-@mixin text_ellipsis($number) {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $number;
-  overflow: hidden;
-}
-
-
 .flex_body {
-  display: flex;
+	display: flex;
 }
 
-.flex_centet {
-  display: flex;
-  align-items: center;
+.flex_center {
+	display: flex;
+	align-items: center;
 }
 
-.flex_justify_centet {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.flex_justify_center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .flex_center_between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .text_omit {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* nprogress样式 */
+#nprogress .bar {
+	background: #7963f9 !important;
+}
+#nprogress .spinner-icon {
+	border-top-color: #7963f9 !important;
+	border-left-color: #7963f9 !important;
+}
+#nprogress .peg {
+	box-shadow: 0 0 10px #7963f9, 0 0 5px #7963f9 !important;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #dddee0;
+	border-radius: 20px;
+	box-shadow: inset 0 0 0 white;
 }

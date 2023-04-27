@@ -7,6 +7,11 @@ declare global {
 	}
 }
 
+declare interface Navigator {
+	msSaveOrOpenBlob: (blob: Blob, fileName: string) => void;
+	browserLanguage: string;
+}
+
 declare module "nprogress";
 declare module "qs";
 

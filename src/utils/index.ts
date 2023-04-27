@@ -49,7 +49,7 @@ export function localClear() {
 export function coverContent(value: string, startLen: number, endLen: number): string {
 	let len = value.length - startLen - endLen;
 	let cover = "";
-	for (var i = 0; i < len; i++) {
+	for (let i = 0; i < len; i++) {
 		cover += "*";
 	}
 	return value.substring(0, startLen) + cover + value.substring(value.length - endLen);
@@ -72,31 +72,31 @@ export function randomNum(min: number, max: number): number {
  * @param {number} time
  * @returns
  */
-export function debounce(fun: Function, time = 500) {
-	let timeout: any = null;
-	return function () {
-		if (timeout) clearTimeout(timeout);
-		timeout = setTimeout(() => {
-			fun.call(this, arguments);
-		}, time);
-	};
-}
+// export function debounce(fun: Function, time = 500) {
+// 	let timeout: any = null;
+// 	return function () {
+// 		if (timeout) clearTimeout(timeout);
+// 		timeout = setTimeout(() => {
+// 			fun.call(this, arguments);
+// 		}, time);
+// 	};
+// }
 
 /**
  * 节流函数, 一定时间内执行一次
  * @param {function} fun
  * @param {number} time
  */
-export function throttle(fun: Function, time = 500) {
-	let timeout: any = null;
-	return function () {
-		if (timeout) return;
-		fun.apply(this, arguments);
-		timeout = setTimeout(() => {
-			timeout = null;
-		}, time);
-	};
-}
+// export function throttle(fun: Function, time = 500) {
+// 	let timeout: any = null;
+// 	return function () {
+// 		if (timeout) return;
+// 		fun.apply(this, arguments);
+// 		timeout = setTimeout(() => {
+// 			timeout = null;
+// 		}, time);
+// 	};
+// }
 
 /**
  * @description 生成唯一 uuid
