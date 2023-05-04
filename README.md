@@ -70,7 +70,6 @@ work-template
 │  ├─ utils               # 常用工具库
 │  ├─ views               # 项目所有页面
 │  ├─ App.vue             # 项目主组件
-│  ├─ env.d.ts            # 指定 ts 识别 vue
 │  └─ main.ts             # 项目入口文件
 ├─ .env                   # vite 常用配置
 ├─ .env.development       # 开发环境配置
