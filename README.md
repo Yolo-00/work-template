@@ -11,8 +11,8 @@ work-template 一款基于 Vue3、TypeScript、Vite3、Pinia、Element-Plus 开�
 - 使用 Pinia 替代 Vuex，轻量、简单、易用， 集成 Pinia 持久化插件
 - 使用 TypeScript 对 Axios 整个二次封装 （请求拦截、常用请求封装……）
 - 使用 VueRouter 进行路由权限拦截、路由懒加载
-- 常用自定义指令开发（权限、复制、水印、拖拽、节流、防抖、长按……）
-- 使用 Prettier 统一格式化代码，集成 Eslint、Stylelint 代码校验规范
+- 常用自定义指令开发（复制、水印、拖拽、节流、防抖、长按……）
+- 使用 Prettier 统一格式化代码，集成 Eslint代码校验规范
 
 ### 安装使用步骤 📔
 
