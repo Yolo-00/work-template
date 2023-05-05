@@ -7,6 +7,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import vueSetupExtend from "vite-plugin-vue-setup-extend-plus";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -40,6 +41,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 					}
 				}
 			}),
+			// * name 可以写在 script 标签上
+			vueSetupExtend(),
 			// * 是否生成包预览(分析依赖包大小,方便做优化处理)
 			viteEnv.VITE_REPORT && (visualizer() as PluginOption),
 			viteCompression({
