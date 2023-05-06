@@ -25,8 +25,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			port: viteEnv.VITE_PORT,
 			proxy: {
 				"/api": {
-					// target: 'http://192.168.0.108:8080',  // 本地node路径
-					target: "http://47.97.193.216:9095",
+					target: "http://192.168.0.108:8080", // 本地node路径
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
 				}

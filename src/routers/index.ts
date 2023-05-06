@@ -42,7 +42,6 @@ const router = createRouter({
  * */
 router.beforeEach(async (to, from, next) => {
 	const globalStore = GlobalStore();
-	// console.log(to, from, "===");
 
 	// 1.NProgress 开始
 	NProgress.start();
