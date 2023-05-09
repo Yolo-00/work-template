@@ -31,7 +31,7 @@ class RequestHttp {
 		 * token校验(JWT) : 接受服务器返回的token,存储到vuex/pinia/本地储存当中
 		 */
 		this.service.interceptors.request.use(
-			(config: AxiosRequestConfig) => {
+			(config: any) => {
 				const globalStore = GlobalStore();
 				// * 将当前请求添加到 pending 中
 				axiosCanceler.addPending(config);
