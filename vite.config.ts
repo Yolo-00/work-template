@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
+import path from "path";
 import { resolve } from "path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { createHtmlPlugin } from "vite-plugin-html";
@@ -8,6 +9,7 @@ import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vueSetupExtend from "vite-plugin-vue-setup-extend-plus";
+import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -33,6 +35,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		},
 		plugins: [
 			vue(),
+			VueI18nPlugin({
+				include: [path.resolve(__dirname, "./src/language")]
+			}),
 			createHtmlPlugin({
 				inject: {
 					data: {

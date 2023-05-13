@@ -1,7 +1,7 @@
 import { defineStore, createPinia } from "pinia";
 import piniaPersistConfig from "@/configs/piniaPersist";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
-import { GlobalStoreType } from "./interface";
+import type { GlobalStoreType, languageType } from "./interface";
 
 // defineStore 调用后返回一个函数，调用该函数获得 Store 实体
 export const GlobalStore = defineStore({
@@ -12,7 +12,9 @@ export const GlobalStore = defineStore({
 		// token
 		token: "",
 		// userInfo
-		userInfo: ""
+		userInfo: "",
+		// language
+		language: "zh"
 	}),
 	getters: {},
 	actions: {
@@ -23,6 +25,10 @@ export const GlobalStore = defineStore({
 		// setUserInfo
 		setUserInfo(userInfo: any) {
 			this.userInfo = userInfo;
+		},
+		// setLanguage
+		setLanguage(language: languageType) {
+			this.language = language;
 		}
 	},
 	persist: piniaPersistConfig("GlobalState")

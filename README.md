@@ -11,7 +11,9 @@ work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Ele
 - 使用 Pinia 替代 Vuex，轻量、简单、易用， 集成 Pinia 持久化插件
 - 使用 TypeScript 对 Axios 整个二次封装 （请求拦截、常用请求封装……）
 - 使用 VueRouter 进行路由权限拦截、路由懒加载
+- 支持 Element 组件和页面的 i18n 国际化
 - 常用自定义指令开发（复制、水印、拖拽、节流、防抖、长按……）
+- 常用自定义 hooks（下载文件、获取时间、语言切换……）
 - 使用 Prettier 统一格式化代码，集成 Eslint 代码校验规范
 
 ### 安装使用步骤 📔
@@ -63,6 +65,7 @@ work-template
 │  ├─ directives          # 全局指令文件
 │  ├─ enums               # 项目常用枚举
 │  ├─ hooks               # 常用 Hooks 封装
+│  ├─ languages           # 语言国际化 i18n
 │  ├─ layouts             # 框架布局模块
 │  ├─ routers             # 路由管理
 │  ├─ stores              # pinia store
