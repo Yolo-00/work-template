@@ -7,7 +7,6 @@ import throttle from "./modules/throttle";
 import longpress from "./modules/longpress";
 
 const directivesList: any = {
-	// Custom directives
 	copy,
 	waterMarker,
 	draggable,

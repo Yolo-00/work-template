@@ -1,3 +1,3 @@
 export default {
-	login: "登录"
+	login: "login"
 };

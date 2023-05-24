@@ -1,6 +1,5 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
-import path from "path";
 import { resolve } from "path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { createHtmlPlugin } from "vite-plugin-html";
@@ -36,7 +35,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		plugins: [
 			vue(),
 			VueI18nPlugin({
-				include: [path.resolve(__dirname, "./src/language")]
+				include: [resolve(__dirname, "./src/language")]
 			}),
 			createHtmlPlugin({
 				inject: {
