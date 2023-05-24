@@ -2,7 +2,7 @@
 
 ### 介绍 📖
 
-work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Element-Plus 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、等功能。
+work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Element-Plus、tailwindcss 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
 
 ### 项目功能 🔨
 
@@ -86,7 +86,9 @@ work-template
 ├─ index.html             # 入口 html
 ├─ LICENSE                # 开源协议文件
 ├─ package.json           # 依赖包管理
+├─ postcss.config.js      # postcss 配置文件
 ├─ README.md              # README 介绍
+├─ tailwind.config.js     # tailwind 配置文件
 ├─ tsconfig.json          # typescript 全局配置
 ├─ vite.config.ts         # vite 全局配置文件
 └─ yarn.lock              # 依赖包包版本锁

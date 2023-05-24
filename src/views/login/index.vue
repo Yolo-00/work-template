@@ -8,7 +8,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import useLanguage from "@/hooks/useLanguage";
-
 const { setLanguage } = useLanguage();
 const { t } = useI18n();
 </script>

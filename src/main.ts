@@ -9,6 +9,7 @@ import directives from "@/directives/index";
 import "virtual:svg-icons-register";
 import * as Icons from "@element-plus/icons-vue";
 import i18n from "@/language/index";
+import "@/styles/tailwindcss.scss";
 
 const app = createApp(App);
 
