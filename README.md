@@ -7,7 +7,7 @@ work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Ele
 ### 项目功能 🔨
 
 - 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
-- 采用 Vite4 作为项目开发、打包工具（配置 Gzip 打包、TSX 语法、跨域代理……）
+- 采用 Vite4 作为项目开发、打包工具（配置 Gzip 打包、生成包预览、跨域代理……）
 - 使用 Pinia 替代 Vuex，轻量、简单、易用， 集成 Pinia 持久化插件
 - 使用 TypeScript 对 Axios 整个二次封装 （请求拦截、常用请求封装……）
 - 使用 VueRouter 进行路由权限拦截、路由懒加载

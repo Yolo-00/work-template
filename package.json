@@ -1,11 +1,10 @@
 {
 	"name": "work-template",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "work-template框架",
 	"scripts": {
-		"dev": "vite",
-		"build:dev": "vue-tsc --noEmit && rimraf dist && vite build --mode development",
+		"dev": "vite --mode development",
 		"build:test": "vue-tsc --noEmit && rimraf dist && vite build --mode test",
 		"build:prod": "vue-tsc --noEmit && rimraf dist && vite build --mode production",
 		"preview": "vite preview",
