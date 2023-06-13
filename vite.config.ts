@@ -47,7 +47,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			// * name 可以写在 script 标签上
 			vueSetupExtend(),
 			// * 是否生成包预览(分析依赖包大小,方便做优化处理)
-			viteEnv.VITE_REPORT && (visualizer() as PluginOption),
+			viteEnv.VITE_REPORT &&
+				(visualizer({
+					emitFile: true,
+					filename: "stats.html"
+				}) as PluginOption),
 			viteCompression({
 				verbose: true,
 				disable: false,
