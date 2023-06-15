@@ -7,6 +7,7 @@
 		"dev": "vite --mode development",
 		"build:test": "vue-tsc --noEmit && rimraf dist && vite build --mode test",
 		"build:prod": "vue-tsc --noEmit && rimraf dist && vite build --mode production",
+		"lint:lint-staged": "lint-staged",
 		"preview": "vite preview",
 		"prepare": "husky install"
 	},
@@ -42,6 +43,7 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-vue": "^9.11.0",
 		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
 		"postcss": "^8.4.23",
 		"prettier": "^2.8.8",
 		"rimraf": "^5.0.1",
