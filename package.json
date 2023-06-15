@@ -28,6 +28,8 @@
 		"vue-router": "^4.1.6"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^17.6.5",
+		"@commitlint/config-conventional": "^17.6.5",
 		"@intlify/unplugin-vue-i18n": "^0.10.0",
 		"@types/node": "^18.16.1",
 		"@types/nprogress": "^0.2.0",
