@@ -29,8 +29,8 @@
 		"vue-router": "^4.1.6"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^17.6.5",
-		"@commitlint/config-conventional": "^17.6.5",
+		"@commitlint/cli": "17.6.3",
+		"@commitlint/config-conventional": "17.6.3",
 		"@intlify/unplugin-vue-i18n": "^0.10.0",
 		"@types/node": "^18.16.1",
 		"@types/nprogress": "^0.2.0",
@@ -57,5 +57,10 @@
 		"vite-plugin-svg-icons": "^2.0.1",
 		"vite-plugin-vue-setup-extend-plus": "^0.1.0",
 		"vue-tsc": "^1.2.0"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
 	}
 }
