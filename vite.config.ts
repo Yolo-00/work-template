@@ -71,9 +71,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			})
 		],
 		css: {
+			// * postcss后处理器
 			postcss: {
-				// * 后处理器 css语法降级
-				plugins: [postcssPresetEnv(), tailwindcss]
+				// * postcssPresetEnv css语法降级
+				plugins: [tailwindcss, postcssPresetEnv()]
 			}
 		},
 		esbuild: {
