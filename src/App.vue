@@ -10,11 +10,11 @@
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import en from "element-plus/es/locale/lang/en";
 import { ElConfigProvider } from "element-plus";
-import { GlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores";
 import { computed } from "vue";
 import { getBrowserLang } from "./utils/util";
 
-const globalStore = GlobalStore();
+const globalStore = useGlobalStore();
 
 // element 语言配置
 const i18nLocale = computed(() => {

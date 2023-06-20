@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import NProgress from "@/configs/nprogress";
-import { GlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores";
 
 // * 导入所有router
 const metaRouters = import.meta.glob("./modules/*.ts", { eager: true });
@@ -42,7 +42,7 @@ const router = createRouter({
  * @description 路由拦截 beforeEach
  * */
 router.beforeEach(async (to, from, next) => {
-	const globalStore = GlobalStore();
+	const globalStore = useGlobalStore();
 
 	// 1.NProgress 开始
 	NProgress.start();

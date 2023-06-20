@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { resolve } from "path";
+import path from "path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -9,6 +9,8 @@ import eslintPlugin from "vite-plugin-eslint";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vueSetupExtend from "vite-plugin-vue-setup-extend-plus";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
+import postcssPresetEnv from "postcss-preset-env";
+import tailwindcss from "tailwindcss";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -17,7 +19,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		base: "./",
 		resolve: {
 			alias: {
-				"@": resolve(__dirname, "./src")
+				"@": path.resolve(__dirname, "./src")
 			}
 		},
 		server: {
@@ -35,7 +37,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		plugins: [
 			vue(),
 			VueI18nPlugin({
-				include: [resolve(__dirname, "./src/language")]
+				include: [path.resolve(__dirname, "./src/language")]
 			}),
 			createHtmlPlugin({
 				inject: {
@@ -57,21 +59,40 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				disable: false,
 				threshold: 10240,
 				algorithm: "gzip",
-				ext: ".gz"
+				ext: ".gz",
+				deleteOriginFile: false
 			}),
 			// * EsLint 报错信息显示在浏览器界面上
 			eslintPlugin(),
 			// * 使用 svg 图标
 			createSvgIconsPlugin({
-				iconDirs: [resolve(process.cwd(), "src/assets/icons")],
+				iconDirs: [path.resolve(__dirname, "./src/assets/icons")],
 				symbolId: "icon-[dir]-[name]"
 			})
 		],
+		css: {
+			postcss: {
+				// * 后处理器 css语法降级
+				plugins: [postcssPresetEnv(), tailwindcss]
+			}
+		},
 		esbuild: {
 			pure: ["console.log", "debugger"]
 		},
 		build: {
-			outDir: "dist"
+			outDir: "dist",
+			rollupOptions: {
+				output: {
+					// * 分包策略
+					manualChunks: (id: string) => {
+						if (id.includes("node_modules")) return "vendor";
+					},
+					// * 静态资源分类包装
+					chunkFileNames: "assets/js/[name]-[hash].js",
+					entryFileNames: "assets/js/[name]-[hash].js",
+					assetFileNames: "assets/[ext]/[name]-[hash].[ext]"
+				}
+			}
 		}
 	};
 });

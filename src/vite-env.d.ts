@@ -18,14 +18,11 @@ declare module "qs";
 // * Vite
 declare type Recordable<T = any> = Record<string, T>;
 
-declare interface ViteEnv {
-	VITE_API_URL: string;
-	VITE_PORT: number;
-	VITE_OPEN: boolean;
-	VITE_APP_TITLE: string;
-	VITE_DROP_CONSOLE: boolean;
-	VITE_PROXY_URL: string;
-	VITE_BUILD_GZIP: boolean;
-	VITE_REPORT: boolean;
-	VITE_IMG_URL: string;
+declare interface ImportMetaEnv {
+	readonly VITE_API_URL: string;
+	readonly VITE_PORT: number;
+	readonly VITE_OPEN: boolean;
+	readonly VITE_APP_TITLE: string;
+	readonly VITE_REPORT: boolean;
+	readonly VITE_IMG_URL: string;
 }

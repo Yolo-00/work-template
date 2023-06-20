@@ -1,8 +1,8 @@
 export interface GlobalStoreType {
 	token: string;
 	userInfo: any;
-	language: languageType;
+	language: LanguageType;
 }
 
 // * 语言
-export type languageType = "zh" | "en";
+export type LanguageType = "zh" | "en";

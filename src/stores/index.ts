@@ -1,12 +1,12 @@
 import { defineStore, createPinia } from "pinia";
 import piniaPersistConfig from "@/configs/piniaPersist";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
-import type { GlobalStoreType, languageType } from "./interface";
+import type { GlobalStoreType, LanguageType } from "./interface";
 
 // defineStore 调用后返回一个函数，调用该函数获得 Store 实体
-export const GlobalStore = defineStore({
+export const useGlobalStore = defineStore({
 	// id: 必须的，在所有 Store 中唯一
-	id: "GlobalState",
+	id: "globalState",
 	// state: 返回对象的函数
 	state: (): GlobalStoreType => ({
 		// token
@@ -27,11 +27,12 @@ export const GlobalStore = defineStore({
 			this.userInfo = userInfo;
 		},
 		// setLanguage
-		setLanguage(language: languageType) {
+		setLanguage(language: LanguageType) {
 			this.language = language;
 		}
 	},
-	persist: piniaPersistConfig("GlobalState")
+	// [] 需要持久化的state,不传默认全部持久化
+	persist: piniaPersistConfig("globalState", ["token", "userInfo"])
 });
 
 // piniaPersist(持久化)
