@@ -2,12 +2,12 @@
 
 ### 介绍 📖
 
-work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Element-Plus、tailwindcss 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率，配置性能优化以保证项目流畅。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
+work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Element-Plus、tailwindcss 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
 
 ### 项目功能 🔨
 
 - 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
-- 采用 Vite4 作为项目开发、打包工具（生成包预览、跨域代理……）
+- 采用 Vite4 作为项目开发、打包工具（生成包预览、跨域代理、代码兼容……）
 - 使用 Pinia 替代 Vuex，轻量、简单、易用， 集成 Pinia 持久化插件
 - 使用 TypeScript 对 Axios 整个二次封装 （请求拦截、常用请求封装……）
 - 使用 VueRouter 进行路由权限拦截、路由懒加载
@@ -15,7 +15,7 @@ work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Ele
 - 常用自定义指令开发（复制、水印、拖拽、节流、防抖、长按……）
 - 常用自定义 hooks（下载文件、获取时间、语言切换……）
 - 使用 Prettier 统一格式化代码，集成 Eslint 代码校验规范
-- 性能优化（配置 Gzip 打包、分包策略……），代码兼容
+- 打包优化（配置 Gzip 打包、分包策略、CDN 引入……）
 
 ### 安装使用步骤 📔
 
