@@ -25,4 +25,5 @@ declare interface ImportMetaEnv {
 	readonly VITE_APP_TITLE: string;
 	readonly VITE_REPORT: boolean;
 	readonly VITE_IMG_URL: string;
+	readonly VITE_CDN: boolean;
 }
