@@ -3,9 +3,11 @@
 	<el-button @click="setLanguage('en')">切换英文</el-button>
 	<el-button @click="setLanguage('zh')">切换中文</el-button>
 	<el-date-picker type="datetime" placeholder="Select date and time" />
+	<SvgIcon name="xianxingdiqiu" />
 </template>
 
 <script setup lang="ts">
+import SvgIcon from "@/components/SvgIcon/index.vue";
 import { useI18n } from "vue-i18n";
 import useLanguage from "@/hooks/useLanguage";
 const { setLanguage } = useLanguage();
