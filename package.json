@@ -5,6 +5,7 @@
 	"description": "work-template框架",
 	"scripts": {
 		"dev": "vite --mode development",
+		"build:dev": "vue-tsc --noEmit && rimraf dist && vite build --mode development",
 		"build:test": "vue-tsc --noEmit && rimraf dist && vite build --mode test",
 		"build:prod": "vue-tsc --noEmit && rimraf dist && vite build --mode production",
 		"lint:lint-staged": "lint-staged",
