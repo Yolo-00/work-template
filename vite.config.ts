@@ -25,7 +25,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		},
 		server: {
 			open: viteEnv.VITE_OPEN,
-			host: "0.0.0.0",
+			host: true,
 			port: viteEnv.VITE_PORT,
 			proxy: {
 				"/api": {

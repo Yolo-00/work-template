@@ -1,12 +1,5 @@
 /// <reference types="vite/client" />
 
-declare global {
-	interface Navigator {
-		msSaveOrOpenBlob: (blob: Blob, fileName: string) => void;
-		browserLanguage: string;
-	}
-}
-
 declare interface Navigator {
 	msSaveOrOpenBlob: (blob: Blob, fileName: string) => void;
 	browserLanguage: string;
