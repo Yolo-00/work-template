@@ -23,10 +23,10 @@ work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Ele
 
 ```text
 # Gitee
-git clone https://gitee.com/guo__Mr/work-template.git
+git clone https://gitee.com/Yolo__00/work-template.git
 
 # GitHub
-git clone https://github.com/guoCertain/work-template.git
+git clone https://github.com/Yolo-00/work-template.git
 ```
 
 - **Install：**
