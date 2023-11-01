@@ -17,5 +17,5 @@ const app = createApp(App);
 Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key as keyof typeof Icons]);
 });
-
+// test
 app.use(ElementPlus).use(pinia).use(router).use(directives).use(i18n).mount("#app");
