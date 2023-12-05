@@ -10,7 +10,7 @@ import i18n from "@/language/index";
 
 import "element-plus/dist/index.css";
 import "@/styles/app.scss";
-import "@/styles/tailwindcss.scss";
+import "virtual:uno.css";
 
 const app = createApp(App);
 

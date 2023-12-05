@@ -11,7 +11,7 @@ import vueSetupExtend from "vite-plugin-vue-setup-extend-plus";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import postcssPresetEnv from "postcss-preset-env";
 import viteCdnImport from "vite-plugin-cdn-import";
-import tailwindcss from "tailwindcss";
+import UnoCSS from "unocss/vite";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -93,13 +93,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 							path: "axios.min.js"
 						}
 					]
-				})
+				}),
+			UnoCSS()
 		],
 		css: {
 			// * postcss后处理器
 			postcss: {
 				// * postcssPresetEnv css语法降级
-				plugins: [tailwindcss, postcssPresetEnv()]
+				plugins: [postcssPresetEnv()]
 			}
 		},
 		esbuild: {

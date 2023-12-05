@@ -13,35 +13,3 @@ export function coverContent(value: string, startLen: number, endLen: number): s
 	}
 	return value.substring(0, startLen) + cover + value.substring(value.length - endLen);
 }
-
-/**
- * 防抖函数,一定时间内执行最后一次
- * @param {function} fun
- * @param {number} time
- * @returns
- */
-// export function debounce(fun: Function, time = 500) {
-// 	let timeout: any = null;
-// 	return function () {
-// 		if (timeout) clearTimeout(timeout);
-// 		timeout = setTimeout(() => {
-// 			fun.call(this, arguments);
-// 		}, time);
-// 	};
-// }
-
-/**
- * 节流函数, 一定时间内执行一次
- * @param {function} fun
- * @param {number} time
- */
-// export function throttle(fun: Function, time = 500) {
-// 	let timeout: any = null;
-// 	return function () {
-// 		if (timeout) return;
-// 		fun.apply(this, arguments);
-// 		timeout = setTimeout(() => {
-// 			timeout = null;
-// 		}, time);
-// 	};
-// }
