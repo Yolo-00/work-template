@@ -12,12 +12,12 @@ import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import postcssPresetEnv from "postcss-preset-env";
 import viteCdnImport from "vite-plugin-cdn-import";
 import UnoCSS from "unocss/vite";
-import { printLog } from "./src/utils/index";
+import { viteServeInfoPlugin } from "./vite/plugin/vite-serve-info";
+import VueDevTools from "vite-plugin-vue-devtools";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
 	const viteEnv = wrapperEnv(env);
-	printLog();
 	return {
 		base: "./",
 		resolve: {
@@ -96,7 +96,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 						}
 					]
 				}),
-			UnoCSS()
+			UnoCSS(),
+			viteServeInfoPlugin(),
+			VueDevTools()
 		],
 		css: {
 			// * postcss后处理器
