@@ -12,7 +12,7 @@ export function viteServeInfoPlugin(): Plugin {
 		buildStart() {
 			// console.log(bold(printLog()));
 			console.log(bold(green(`当前时间 ${magenta(dayjs().format("YYYY年MM月DD日 HH时mm分ss秒"))}`)));
-			console.log(bold(green(`欢迎使用 ${magenta(pack.name)} ${magenta("V:" + pack.version)}`)));
+			console.log(bold(green(`欢迎使用 ${magenta(pack.name)} ${magenta("v:" + pack.version)}`)));
 		}
 	};
 }
