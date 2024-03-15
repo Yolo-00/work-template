@@ -20,3 +20,5 @@ declare interface ImportMetaEnv {
 	readonly VITE_IMG_URL: string;
 	readonly VITE_CDN: boolean;
 }
+
+declare module "postcss-preset-env";

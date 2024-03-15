@@ -2,7 +2,6 @@ import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from 
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import { wrapperEnv } from "./src/utils/getEnv";
-import { createHtmlPlugin } from "vite-plugin-html";
 import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
@@ -41,13 +40,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			vue(),
 			VueI18nPlugin({
 				include: [path.resolve(__dirname, "./src/language")]
-			}),
-			createHtmlPlugin({
-				inject: {
-					data: {
-						title: viteEnv.VITE_APP_TITLE
-					}
-				}
 			}),
 			// * name 可以写在 script 标签上
 			vueSetupExtend(),
