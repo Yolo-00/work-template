@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import NProgress from "@/configs/nprogress";
-import { useGlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores/modules/user";
 
 // * 导入所有router
 const metaRouters = import.meta.glob("./modules/*.ts", { eager: true });

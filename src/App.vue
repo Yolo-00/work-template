@@ -10,7 +10,7 @@
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import en from "element-plus/es/locale/lang/en";
 import { ElConfigProvider } from "element-plus";
-import { useGlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores/modules/user";
 import { computed } from "vue";
 import { getBrowserLang } from "./utils/util";
 

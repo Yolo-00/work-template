@@ -1,5 +1,5 @@
 import type { LanguageType } from "@/stores/interface";
-import { useGlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores/modules/user";
 import { useI18n } from "vue-i18n";
 
 /**

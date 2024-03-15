@@ -5,7 +5,7 @@ import { ResultData } from "@/api/interface";
 import { ResultEnum } from "@/enums/httpEnum";
 import { checkStatus } from "./helper/checkStatus";
 import { ElMessage } from "element-plus";
-import { useGlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores/modules/user";
 import router from "@/routers";
 
 const axiosCanceler = new AxiosCanceler();
