@@ -6,12 +6,12 @@ import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import vueSetupExtend from "vite-plugin-vue-setup-extend-plus";
+import vueSetupExtend from "unplugin-vue-setup-extend-plus/vite";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import postcssPresetEnv from "postcss-preset-env";
-import viteCdnImport from "vite-plugin-cdn-import";
 import UnoCSS from "unocss/vite";
 import { viteServeInfoPlugin } from "./vite/plugin/vite-serve-info";
+import { cdn } from "./vite/plugin/cdn";
 // import VueDevTools from "vite-plugin-vue-devtools";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -42,7 +42,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				include: [path.resolve(__dirname, "./src/language")]
 			}),
 			// * name 可以写在 script 标签上
-			vueSetupExtend(),
+			vueSetupExtend({}),
 			// * 是否生成包预览(分析依赖包大小,方便做优化处理)
 			viteEnv.VITE_REPORT &&
 				(visualizer({
@@ -65,29 +65,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				iconDirs: [path.resolve(__dirname, "./src/assets/icons")],
 				symbolId: "icon-[dir]-[name]"
 			}),
-			viteEnv.VITE_CDN &&
-				viteCdnImport({
-					// * 平台采用国内cdn：https://www.bootcdn.cn,当然你也可以选择 https://cdnjs.com/
-					// * name: 对应modules的name,version：读取package.json对应依赖的版本号,path: 对应modules的path,也可写完整路径，会替换prodUrl
-					prodUrl: "https://cdn.bootcdn.net/ajax/libs/{name}/{version}/{path}",
-					modules: [
-						{
-							name: "dayjs",
-							var: "dayjs",
-							path: "dayjs.min.js"
-						},
-						{
-							name: "lodash",
-							var: "_",
-							path: "https://cdn.bootcdn.net/ajax/libs/lodash.js/{version}/lodash.min.js"
-						},
-						{
-							name: "axios",
-							var: "axios",
-							path: "axios.min.js"
-						}
-					]
-				}),
+			viteEnv.VITE_CDN && cdn,
 			UnoCSS(),
 			viteServeInfoPlugin()
 			// VueDevTools()
