@@ -2,12 +2,12 @@
 
 ### 介绍 📖
 
-work-template 一款基于 Vue3、TypeScript、Vite4、vue-router4、Pinia、Element-Plus、unocss 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
+work-template 一款基于 Vue3、TypeScript、Vite5、vue-router4、Pinia、Element-Plus、unocss 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
 
 ### 项目功能 🔨
 
 - 使用 Vue3 + TypeScript 开发，单文件组件**＜ script setup ＞**
-- 采用 Vite4 作为项目开发、打包工具（生成包预览、跨域代理、代码兼容……）
+- 采用 Vite5 作为项目开发、打包工具（生成包预览、跨域代理、代码兼容……）
 - 使用 Pinia 替代 Vuex，轻量、简单、易用， 集成 Pinia 持久化插件
 - 使用 TypeScript 对 Axios 整个二次封装 （请求拦截、常用请求封装……）
 - 使用 VueRouter 进行路由权限拦截、路由懒加载
