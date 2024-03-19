@@ -1,8 +1,12 @@
 # work-template
 
+![GitHub license](https://img.shields.io/github/license/Yolo-00/work-template?style=flat)
+![GitHub stars](https://img.shields.io/github/stars/Yolo-00/work-template?color=fa6470&style=flat)
+![GitHub forks](https://img.shields.io/github/forks/Yolo-00/work-template?style=flat)
+
 ### 介绍 📖
 
-work-template 一款基于 Vue3、TypeScript、Vite5、vue-router4、Pinia、Element-Plus、unocss 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
+`work-template` 一款基于 `Vue3`、`TypeScript`、`Vite5`、`vue-router`、`Pinia`、`Element-Plus`、`unocss` 开源的模板框架，使用目前最新技术栈开发。在一定程度上节省您的开发效率。另外本项目还封装了一些常用组件、Hooks、指令、路由、国际化等功能。
 
 ### 项目功能 🔨
 
@@ -99,3 +103,15 @@ work-template
 ├─ vite.config.ts         # vite 全局配置文件
 └─ yarn.lock              # 依赖包包版本锁
 ```
+
+## `Star`
+
+非常感谢留下星星的好心人，感谢您的支持 ❤️
+
+[![Stargazers repo roster for Yolo-00/work-template](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=Yolo-00&repo=work-template)](https://github.com/Yolo-00/work-template/stargazers)
+
+## `Fork`
+
+瞧，那些 `小哥哥` 、`小姐姐` 认真 `学习` 的样子真滴是 `哎呦不错哦` ❤️
+
+[![Forkers repo roster for Yolo-00/work-template](https://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?user=Yolo-00&repo=work-template)](https://github.com/Yolo-00/work-template/network/members)
