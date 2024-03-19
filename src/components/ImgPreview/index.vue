@@ -37,9 +37,12 @@ const imageList = computed<string[]>(() => {
 				class="image-style"
 				:src="item"
 				hide-on-click-modal
-				:preview-src-list="[item]"
+				:initial-index="index"
+				:preview-src-list="imageList"
 				:lazy="imageLazy"
 				:fit="imageFit"
+				:z-index="99"
+				preview-teleported
 			/>
 		</div>
 	</div>
