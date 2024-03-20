@@ -110,7 +110,7 @@ const self_disabled = computed(() => {
  * */
 interface UploadEmits {
 	(e: "update:imageUrl", value: string): void;
-	(e: "check-validate"): void;
+	(e: "checkValidate"): void;
 }
 const emit = defineEmits<UploadEmits>();
 const handleHttpUpload = async (options: UploadRequestOptions) => {
@@ -122,7 +122,7 @@ const handleHttpUpload = async (options: UploadRequestOptions) => {
 		emit("update:imageUrl", data.fileUrl);
 		// 调用 el-form 内部的校验方法（可自动校验）
 		formItemContext?.prop && formContext?.validateField([formItemContext.prop as string]);
-		emit("check-validate");
+		emit("checkValidate");
 	} catch (error) {
 		options.onError(error as any);
 	}

@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
-import path from "path";
+import path from "node:path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";

@@ -14,6 +14,17 @@ import "virtual:uno.css";
 
 const app = createApp(App);
 
+// 图片预览组件
+import ImgPreview from "@/components/ImgPreview/index.vue";
+// icon
+import SvgIcon from "@/components/SvgIcon/index.vue";
+// 富文本
+import WangEditor from "@/components/WangEditor/index.vue";
+
+app.component("ImgPreview", ImgPreview);
+app.component("SvgIcon", SvgIcon);
+app.component("WangEditor", WangEditor);
+
 Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key as keyof typeof Icons]);
 });

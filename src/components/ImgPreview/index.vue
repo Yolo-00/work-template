@@ -41,7 +41,7 @@ const imageList = computed<string[]>(() => {
 				:preview-src-list="imageList"
 				:lazy="imageLazy"
 				:fit="imageFit"
-				:z-index="99"
+				:z-index="99999"
 				preview-teleported
 			/>
 		</div>

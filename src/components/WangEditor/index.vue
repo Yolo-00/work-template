@@ -1,11 +1,11 @@
 <template>
 	<div :class="['editor-box', disabled ? 'editor-disabled' : '']">
-		<Toolbar class="editor-toolbar" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" v-if="!hideToolBar" />
+		<Toolbar class="editor-toolbar" :editor="editorRef" :default-config="toolbarConfig" :mode="mode" v-if="!hideToolBar" />
 		<Editor
 			:style="{ height }"
 			class="editor-content'"
 			v-model="valueHtml"
-			:defaultConfig="editorConfig"
+			:default-config="editorConfig"
 			:mode="mode"
 			@on-created="handleCreated"
 			@on-blur="handleBlur"
@@ -62,7 +62,7 @@ if (props.disabled) nextTick(() => editorRef.value.disable());
 // 富文本的内容监听，触发父组件改变，实现双向数据绑定
 type EmitProps = {
 	(e: "update:value", val: string): void;
-	(e: "check-validate"): void;
+	(e: "checkValidate"): void;
 };
 const emit = defineEmits<EmitProps>();
 const valueHtml = computed({
@@ -130,7 +130,7 @@ const uploadVideoValidate = (file: File): boolean => {
 
 // 编辑框失去焦点时触发
 const handleBlur = () => {
-	emit("check-validate");
+	emit("checkValidate");
 };
 
 // 组件销毁时，也及时销毁编辑器
