@@ -13,7 +13,7 @@ export const cdn = importToCDN({
 		{
 			name: "lodash",
 			var: "_",
-			path: "lodash.min.js"
+			path: "https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"
 		},
 		{
 			name: "axios",
