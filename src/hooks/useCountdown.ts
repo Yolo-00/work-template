@@ -8,12 +8,12 @@ import { clone } from "lodash";
 
 export const useCountdown = (time = 60) => {
 	const currentTime = ref(clone(time));
-	const isDisable = ref(false);
+	const isDisabled = ref(false);
 	let timer: any = null;
 
 	/** 倒计时开始 */
 	const countdownStart = () => {
-		isDisable.value = true;
+		isDisabled.value = true;
 		currentTime.value--;
 		timer = setInterval(() => {
 			if (currentTime.value > 0) {
@@ -27,12 +27,12 @@ export const useCountdown = (time = 60) => {
 	/** 倒计时结束 */
 	const countdownEnd = () => {
 		currentTime.value = clone(time);
-		isDisable.value = false;
+		isDisabled.value = false;
 		clearInterval(timer);
 	};
 	return {
 		currentTime,
-		isDisable,
+		isDisabled,
 		countdownStart,
 		countdownEnd
 	};
