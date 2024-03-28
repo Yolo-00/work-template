@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import {} from "vue";
 import Navbar from "./components/Navbar/index.vue";
+import AsideMenu from "./components/AsideMenu/index.vue";
 </script>
 
 <template>
 	<div>
-		<el-container>
-			<el-header><Navbar /></el-header>
+		<el-container class="h-100vh">
+			<el-aside width="200px">
+				<AsideMenu />
+			</el-aside>
 			<el-container>
-				<el-aside width="200px">Aside</el-aside>
+				<el-header><Navbar /></el-header>
 				<el-container>
 					<el-main>
 						<!-- 子路由 -->
@@ -24,6 +27,7 @@ import Navbar from "./components/Navbar/index.vue";
 				</el-container>
 			</el-container>
 		</el-container>
+		<el-backtop />
 	</div>
 </template>
 
