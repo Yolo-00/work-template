@@ -14,7 +14,9 @@ import type { FormInstance } from "element-plus";
 import { useGlobalStore } from "@/stores/modules/user";
 // i18n
 import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const { setLanguage } = useLanguage();
 const { t } = useI18n();
 const globalStore = useGlobalStore();
@@ -24,8 +26,8 @@ const title = import.meta.env.VITE_APP_TITLE;
 
 const formRef = ref<FormInstance>();
 const formData = reactive({
-	phone: "",
-	password: ""
+	account: "admin",
+	password: "123456"
 });
 
 const handleLogin = () => {
@@ -33,7 +35,11 @@ const handleLogin = () => {
 		if (!res) return;
 		console.log(formData);
 		console.log(globalStore);
-		// globalStore.setToken();
+		globalStore.setToken(new Date().getTime().toString());
+		router.push({
+			path: "/",
+			replace: true
+		});
 		// globalStore.setUserInfo();
 	});
 };
@@ -68,11 +74,24 @@ const handleLogin = () => {
 		<div p-5 bg-white dark:bg-black rounded-lg w-70>
 			<div font-semibold text-xl text-center mb-4>{{ title }}</div>
 			<el-form ref="formRef" :model="formData" :rules="formRules">
-				<el-form-item prop="phone">
-					<el-input v-model="formData.phone" prefix-icon="UserFilled" clearable :placeholder="t('login.phone')" />
+				<el-form-item prop="account">
+					<el-input
+						v-model="formData.account"
+						prefix-icon="UserFilled"
+						clearable
+						:placeholder="t('login.account')"
+						@keyup.enter="handleLogin"
+					/>
 				</el-form-item>
 				<el-form-item prop="password">
-					<el-input v-model="formData.password" prefix-icon="lock" clearable :placeholder="t('login.password')" show-password />
+					<el-input
+						v-model="formData.password"
+						prefix-icon="lock"
+						clearable
+						:placeholder="t('login.password')"
+						show-password
+						@keyup.enter="handleLogin"
+					/>
 				</el-form-item>
 				<el-form-item>
 					<el-button type="primary" w-full @click="handleLogin">{{ t("login.login") }}</el-button>

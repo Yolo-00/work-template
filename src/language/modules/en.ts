@@ -1,7 +1,7 @@
 export default {
 	login: {
 		login: "login",
-		phone: "Account",
+		account: "Account",
 		password: "password"
 	}
 };
