@@ -1,4 +1,5 @@
 @import "./dark.scss";
+@import "./element-plus.scss";
 
 .flex_body {
 	display: flex;
@@ -36,7 +37,9 @@
 	border-left-color: #7963f9 !important;
 }
 #nprogress .peg {
-	box-shadow: 0 0 10px #7963f9, 0 0 5px #7963f9 !important;
+	box-shadow:
+		0 0 10px #7963f9,
+		0 0 5px #7963f9 !important;
 }
 
 /* scroll bar */

@@ -6,7 +6,6 @@ import { ResultEnum } from "@/enums/httpEnum";
 import { checkStatus } from "./helper/checkStatus";
 import { ElMessage } from "element-plus";
 import { useGlobalStore } from "@/stores/modules/user";
-import router from "@/routers";
 
 const axiosCanceler = new AxiosCanceler();
 
@@ -59,10 +58,7 @@ class RequestHttp {
 				// * 登陆失效
 				if (data.code == ResultEnum.OVERDUE) {
 					ElMessage.error(data.msg);
-					globalStore.setToken("");
-					router.replace({
-						path: "/login"
-					});
+					globalStore.setReset();
 					return Promise.reject(data);
 				}
 				// * 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
