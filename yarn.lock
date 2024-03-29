@@ -7042,6 +7042,11 @@ vue-tsc@^2.0.0:
     "@vue/language-core" "2.0.6"
     semver "^7.5.4"
 
+vue3-puzzle-vcode@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/vue3-puzzle-vcode/-/vue3-puzzle-vcode-1.1.7.tgz#954e577fbbd4085d37dde08f98636b313c9f0f80"
+  integrity sha512-mW780dz7HKjrElnE60CeYSeHGidKBKHoMjTDYfqF21330rTkFOsfDK1FQKZ22MktgMtTEoS/imfpEDlM1cxY/g==
+
 vue@^3.4.21:
   version "3.4.21"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.4.21.tgz#69ec30e267d358ee3a0ce16612ba89e00aaeb731"

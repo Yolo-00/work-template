@@ -15,6 +15,12 @@ import { useGlobalStore } from "@/stores/modules/user";
 // i18n
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
+// utils
+import { debounce } from "lodash";
+// components
+import PuzzleVerify from "@/components/PuzzleVerify/index.vue";
+// api
+import { loginApi } from "@/api/modules/login";
 
 const router = useRouter();
 const { setLanguage } = useLanguage();
@@ -23,6 +29,7 @@ const globalStore = useGlobalStore();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const title = import.meta.env.VITE_APP_TITLE;
+const puzzleVerifyRef = ref();
 
 const formRef = ref<FormInstance>();
 const formData = reactive({
@@ -30,19 +37,25 @@ const formData = reactive({
 	password: "123456"
 });
 
-const handleLogin = () => {
+const handleLogin = debounce(() => {
 	formRef.value?.validate(res => {
 		if (!res) return;
 		console.log(formData);
 		console.log(globalStore);
-		globalStore.setToken(new Date().getTime().toString());
-		router.push({
-			path: "/",
-			replace: true
+		console.log(router);
+		puzzleVerifyRef.value.open(() => {
+			loginApi({
+				loginName: formData.account,
+				password: formData.password
+			}).then(res => {
+				console.log(res);
+				// globalStore.setToken(new Date().getTime().toString());
+				// router.replace("/");
+				// globalStore.setUserInfo();
+			});
 		});
-		// globalStore.setUserInfo();
 	});
-};
+}, 500);
 </script>
 
 <template>
@@ -99,11 +112,13 @@ const handleLogin = () => {
 			</el-form>
 		</div>
 	</div>
+
+	<PuzzleVerify ref="puzzleVerifyRef" />
 </template>
 
 <style scoped lang="scss">
 .login-bg {
-	background-image: url("@/assets/image/login-bg.png");
+	background-image: url("@/assets/images/login-bg.png");
 	width: 100%;
 	height: 100vh;
 }

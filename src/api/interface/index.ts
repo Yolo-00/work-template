@@ -24,7 +24,7 @@ export interface ResPage<T> extends ReqPage {
 // * 登录模块
 export namespace Login {
 	export interface ReqLoginForm {
-		username: string;
+		loginName: string;
 		password: string;
 	}
 	export interface ResLogin {

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<el-config-provider :locale="i18nLocale">
+		<el-config-provider :locale="i18nLocale" :button="{ autoInsertSpace: true }" :message="{ max: 10 }">
 			<router-view />
 		</el-config-provider>
 	</div>

@@ -7,7 +7,7 @@ import { useI18n } from "vue-i18n";
 import useLanguage from "@/hooks/useLanguage";
 import { useDark, useToggle, useFullscreen } from "@vueuse/core";
 // image
-import Avatar from "@/assets/image/avatar.png";
+import Avatar from "@/assets/images/avatar.png";
 
 const title = import.meta.env.VITE_APP_TITLE;
 const { isFullscreen, toggle } = useFullscreen();
