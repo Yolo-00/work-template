@@ -40,17 +40,13 @@ const formData = reactive({
 const handleLogin = debounce(() => {
 	formRef.value?.validate(res => {
 		if (!res) return;
-		console.log(formData);
-		console.log(globalStore);
-		console.log(router);
 		puzzleVerifyRef.value.open(() => {
 			loginApi({
 				loginName: formData.account,
 				password: formData.password
 			}).then(res => {
-				console.log(res);
-				// globalStore.setToken(new Date().getTime().toString());
-				// router.replace("/");
+				globalStore.setToken(res.data.accessToken);
+				router.replace("/");
 				// globalStore.setUserInfo();
 			});
 		});

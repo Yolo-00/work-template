@@ -42,6 +42,7 @@ defineExpose({
 			:canvas-width="props.width"
 			:canvas-height="props.height"
 			:show="isShow"
+			@close="handleClose"
 			@success="onSuccess"
 		/>
 	</div>

@@ -57,13 +57,13 @@ class RequestHttp {
 				tryHideFullScreenLoading();
 				// * 登陆失效
 				if (data.code == ResultEnum.OVERDUE) {
-					ElMessage.error(data.msg);
+					ElMessage.error(data.message);
 					globalStore.setReset();
 					return Promise.reject(data);
 				}
 				// * 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
 				if (data.code && data.code !== ResultEnum.SUCCESS) {
-					ElMessage.error(data.msg);
+					ElMessage.error(data.message);
 					return Promise.reject(data);
 				}
 				// * 成功请求（在页面上除非特殊情况，否则不用处理失败逻辑）
