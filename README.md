@@ -89,14 +89,14 @@ work-template
 ├─ .env.production        # 生产环境配置
 ├─ .env.test              # 测试环境配置
 ├─ .eslintignore          # 忽略 Eslint 校验
-├─ .eslintrc.js           # Eslint 校验配置文件
+├─ .eslintrc.cjs          # Eslint 校验配置文件
 ├─ .gitignore             # 忽略 git 提交
 ├─ .prettierignore        # 忽略 Prettier 格式化
-├─ .prettierrc.js         # Prettier 格式化配置
+├─ .prettierrc.cjs        # Prettier 格式化配置
 ├─ index.html             # 入口 html
 ├─ LICENSE                # 开源协议文件
 ├─ package.json           # 依赖包管理
-├─ postcss.config.js      # postcss 配置文件
+├─ postcss.config.cjs     # postcss 配置文件
 ├─ README.md              # README 介绍
 ├─ uno.config.ts          # unocss 配置文件
 ├─ tsconfig.json          # typescript 全局配置

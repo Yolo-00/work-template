@@ -4,3 +4,10 @@
 .el-main {
 	--el-main-padding: "none";
 }
+.el-tooltip__trigger:focus-visible {
+	outline: unset;
+}
+
+.el-tooltip__trigger {
+	outline: unset;
+}

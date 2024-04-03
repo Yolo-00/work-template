@@ -7,15 +7,15 @@ interface ImageProps {
 	animationData: any; // LottieJSON ==> 必传
 	isLoop?: boolean; // 是否循环播放 ==> 非必传（默认为true）
 	isAutoplay?: boolean; // 是否自动播放 ==> 非必传（默认为true）
-	width?: number; // 组件宽度 ==> 非必传（默认为 500px）
-	height?: number; // 组件高度 ==> 非必传（默认为 500px）
+	width?: number; // 组件宽度 ==> 非必传（默认为 250px）
+	height?: number; // 组件高度 ==> 非必传（默认为 250px）
 }
 // 接收父组件参数并设置默认值
 const props = withDefaults(defineProps<ImageProps>(), {
 	isLoop: true,
 	isAutoplay: true,
-	width: 500,
-	height: 500
+	width: 250,
+	height: 250
 });
 const lottieRef = ref();
 const lottieId = ref("lottieID" + generateUUID());
@@ -42,7 +42,7 @@ onMounted(() => {
 		renderer: "canvas", // 渲染方式:svg、canvas
 		loop: props.isLoop, // 是否循环播放，默认：false
 		autoplay: props.isAutoplay, // 是否自动播放, 默认true
-		animationData: props.animationData // AE动画使用bodymovie导出为json数据
+		animationData: props.animationData // AE动画导出为json数据
 	});
 	if (props.isLoop) {
 		lottieRef.value.addEventListener("loopComplete", () => {
