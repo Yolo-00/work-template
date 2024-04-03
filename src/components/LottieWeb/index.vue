@@ -5,18 +5,21 @@ import { generateUUID } from "@/utils/util";
 
 interface ImageProps {
 	animationData: any; // LottieJSON ==> 必传
-	loop?: boolean; // 是否循环播放 ==> 非必传（默认为true）
+	isLoop?: boolean; // 是否循环播放 ==> 非必传（默认为true）
+	isAutoplay?: boolean; // 是否自动播放 ==> 非必传（默认为true）
 	width?: number; // 组件宽度 ==> 非必传（默认为 500px）
 	height?: number; // 组件高度 ==> 非必传（默认为 500px）
 }
 // 接收父组件参数并设置默认值
 const props = withDefaults(defineProps<ImageProps>(), {
-	loop: true,
+	isLoop: true,
+	isAutoplay: true,
 	width: 500,
 	height: 500
 });
 const lottieRef = ref();
 const lottieId = ref("lottieID" + generateUUID());
+
 const lottieStyle = computed(() => ({
 	width: props.width + "px",
 	height: props.height + "px"
@@ -37,11 +40,11 @@ onMounted(() => {
 	lottieRef.value = lottie.loadAnimation({
 		container: document.getElementById(lottieId.value) as HTMLElement, // 绑定dom节点
 		renderer: "canvas", // 渲染方式:svg、canvas
-		loop: props.loop, // 是否循环播放，默认：false
-		autoplay: true, // 是否自动播放, 默认true
+		loop: props.isLoop, // 是否循环播放，默认：false
+		autoplay: props.isAutoplay, // 是否自动播放, 默认true
 		animationData: props.animationData // AE动画使用bodymovie导出为json数据
 	});
-	if (props.loop) {
+	if (props.isLoop) {
 		lottieRef.value.addEventListener("loopComplete", () => {
 			emit("loopComplete");
 		});
