@@ -1,4 +1,4 @@
-<script setup lang="ts" name="ImgPreview">
+<script setup lang="ts" name="ImagePreview">
 import { computed } from "vue";
 
 interface ImageProps {

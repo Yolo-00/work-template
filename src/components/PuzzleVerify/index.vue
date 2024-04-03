@@ -8,7 +8,7 @@ interface ImageProps {
 	height?: number; // 组件高度 ==> 非必传（默认为 160px）
 }
 // 接收父组件参数并设置默认值
-const props = withDefaults(defineProps<ImageProps>(), {
+withDefaults(defineProps<ImageProps>(), {
 	width: 320,
 	height: 160
 });
@@ -38,9 +38,9 @@ defineExpose({
 <template>
 	<div>
 		<Vcode
-			:imgs="[props.imageUrl]"
-			:canvas-width="props.width"
-			:canvas-height="props.height"
+			:imgs="[imageUrl]"
+			:canvas-width="width"
+			:canvas-height="height"
 			:show="isShow"
 			@close="handleClose"
 			@success="onSuccess"
