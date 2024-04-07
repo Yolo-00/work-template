@@ -60,50 +60,6 @@ yarn build:test
 yarn build:prod
 ```
 
-```text
-work-template
-├─ .husky                 # husky 配置文件
-├─ .vscode                # VSCode 推荐配置
-├─ public                 # 静态资源文件（该文件夹不会被打包）
-├─ src
-│  ├─ api                 # API 接口管理
-│  ├─ assets              # 静态资源文件
-│  ├─ components          # 全局组件
-│  ├─ config              # 全局配置项
-│  ├─ directives          # 全局指令文件
-│  ├─ enums               # 项目常用枚举
-│  ├─ hooks               # 常用 Hooks 封装
-│  ├─ languages           # 语言国际化 i18n
-│  ├─ layouts             # 框架布局模块
-│  ├─ routers             # 路由管理
-│  ├─ stores              # 全局状态管理
-│  ├─ styles              # 全局样式文件
-│  ├─ utils               # 常用工具库
-│  ├─ views               # 项目所有页面
-│  ├─ App.vue             # 项目主组件
-│  ├─ main.ts             # 项目入口文件
-│  └─ vite-env.d.ts       # 指定 ts 识别
-├─ vite                   # vite 插件
-├─ .env                   # vite 常用配置
-├─ .env.development       # 开发环境配置
-├─ .env.production        # 生产环境配置
-├─ .env.test              # 测试环境配置
-├─ .eslintignore          # 忽略 Eslint 校验
-├─ .eslintrc.cjs          # Eslint 校验配置文件
-├─ .gitignore             # 忽略 git 提交
-├─ .prettierignore        # 忽略 Prettier 格式化
-├─ .prettierrc.cjs        # Prettier 格式化配置
-├─ index.html             # 入口 html
-├─ LICENSE                # 开源协议文件
-├─ package.json           # 依赖包管理
-├─ postcss.config.cjs     # postcss 配置文件
-├─ README.md              # README 介绍
-├─ uno.config.ts          # unocss 配置文件
-├─ tsconfig.json          # typescript 全局配置
-├─ vite.config.ts         # vite 全局配置文件
-└─ yarn.lock              # 依赖包包版本锁
-```
-
 ## 如何贡献
 
 非常欢迎您的加入！[提一个 Issue](https://github.com/Yolo-00/work-template/issues/new/choose) 或者提交一个 `Pull Request`
