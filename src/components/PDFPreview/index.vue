@@ -81,16 +81,7 @@ defineExpose({
 				</div>
 			</div>
 			<el-scrollbar mt-3 height="75vh" v-loading="loading">
-				<vue-pdf-embed
-					ref="pdfRef"
-					container
-					overflow-auto
-					annotation-layer
-					text-layer
-					:source="source"
-					:page="currentPage"
-					@rendered="documentRender"
-				/>
+				<vue-pdf-embed ref="pdfRef" container overflow-auto :source="source" :page="currentPage" @rendered="documentRender" />
 			</el-scrollbar>
 		</el-dialog>
 	</div>
