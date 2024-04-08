@@ -24,8 +24,8 @@ const handleClose = () => {
 	isShow.value = false;
 };
 
-const open = (fun: any) => {
-	directiveFun = fun;
+const open = (fun?: any) => {
+	if (fun) directiveFun = fun;
 	isShow.value = true;
 };
 

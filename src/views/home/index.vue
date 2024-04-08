@@ -1,18 +1,25 @@
 <template>
 	<div>
 		<!-- <div style="height: 1000px">home</div> -->
-		<el-button type="primary" @click="handle">按钮</el-button>
-		<PDFPreview ref="pdfPreviewRef" />
+		<QRCode
+			ref="qrCodeRef"
+			logo="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+			type="img"
+			:options="{ color: { dark: '#60a5fa' } }"
+			content="www.baidu.com"
+		/>
+		<el-button @click="handleUpdate">下载</el-button>
 	</div>
 </template>
 
 <script setup lang="ts">
-import PDFPreview from "@/components/PDFPreview/index.vue";
 import { ref } from "vue";
+import QRCode from "@/components/QRCode/index.vue";
 
-const pdfPreviewRef = ref();
-const handle = () => {
-	pdfPreviewRef.value.open();
+const qrCodeRef = ref();
+
+const handleUpdate = () => {
+	qrCodeRef.value.downLoadQRCode();
 };
 </script>
 
