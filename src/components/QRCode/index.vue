@@ -76,10 +76,10 @@ const initQRCode = async () => {
 };
 
 // 下载二维码
-const downLoadQRCode = (tempName: string = generateUUID(), fileType: string = ".png") => {
+const downLoadQRCode = (fileName: string = generateUUID(), fileType: string = ".png") => {
 	const exportFile = document.createElement("a");
 	exportFile.style.display = "none";
-	exportFile.download = `${tempName}${fileType}`;
+	exportFile.download = `${fileName}${fileType}`;
 	exportFile.href = qrCodeUrl.value;
 	document.body.appendChild(exportFile);
 	exportFile.click();

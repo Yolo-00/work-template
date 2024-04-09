@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<!-- <div style="height: 1000px">home</div> -->
 		<QRCode
 			ref="qrCodeRef"
 			logo="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
