@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig, type PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "node:path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -38,6 +39,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		},
 		plugins: [
 			vue(),
+			vueJsx(),
 			VueI18nPlugin({
 				include: [path.resolve(__dirname, "./src/language")]
 			}),
