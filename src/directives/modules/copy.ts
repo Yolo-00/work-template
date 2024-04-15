@@ -22,13 +22,17 @@ const copy: Directive = {
 	}
 };
 
-function handleClick(this: any) {
-	const input = document.createElement("input");
-	input.value = this.copyData.toLocaleString();
-	document.body.appendChild(input);
-	input.select();
-	document.execCommand("Copy");
-	document.body.removeChild(input);
+async function handleClick(this: any) {
+	if (!navigator.clipboard) {
+		const input = document.createElement("input");
+		input.value = this.copyData.toLocaleString();
+		document.body.appendChild(input);
+		input.select();
+		document.execCommand("Copy");
+		document.body.removeChild(input);
+	} else {
+		await navigator.clipboard.writeText(this.copyData);
+	}
 	ElMessage({
 		type: "success",
 		message: "复制成功"

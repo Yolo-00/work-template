@@ -8,6 +8,7 @@
 			content="www.baidu.com"
 		/>
 		<el-button @click="handleUpdate">下载</el-button>
+		<el-button v-copy="'www.baidu.com'">复制</el-button>
 	</div>
 </template>
 
