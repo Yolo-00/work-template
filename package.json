@@ -40,6 +40,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"@element-plus/icons-vue": "^2.3.1",
+		"@vue-office/docx": "^1.6.0",
+		"@vue-office/excel": "^1.7.6",
 		"@vueuse/core": "^10.9.0",
 		"@wangeditor/editor": "^5.1.23",
 		"@wangeditor/editor-for-vue": "^5.1.12",

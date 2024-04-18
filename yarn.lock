@@ -2013,6 +2013,16 @@
     "@volar/language-core" "2.2.0-alpha.8"
     path-browserify "^1.0.1"
 
+"@vue-office/docx@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@vue-office/docx/-/docx-1.6.0.tgz#af451d20c24b9075da1506c6b7024e8846e173bd"
+  integrity sha512-OKEapOPq223uszA8mRSOWPhdfBchJa6sIqP46eMrMMe5RSUrG9m3QE/o0JBIaMgxDrtNd7aI9CvF2kDvb7G2hw==
+
+"@vue-office/excel@^1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@vue-office/excel/-/excel-1.7.6.tgz#a59838139ec16ef0969ebf8d6d648a6d4bdd1342"
+  integrity sha512-HbhzudczlmPu5/p6ES4lAQDN6L9kQ0zoZOjDzCYmHxKj9O+IwAjzSwNIEAE1e0lolHQofZvvjtWDMZ/LNvKgTA==
+
 "@vue/babel-helper-vue-transform-on@1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-transform-on/-/babel-helper-vue-transform-on-1.2.1.tgz#3a48da809025b9a0eb4f4b3030e0d316c40fac0a"

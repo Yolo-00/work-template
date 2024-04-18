@@ -10,6 +10,7 @@ import { useDark, useToggle, useFullscreen } from "@vueuse/core";
 import Avatar from "@/assets/images/avatar.png";
 // pinia
 import { useGlobalStore } from "@/stores/modules/user";
+import { useAppStore } from "@/stores/modules/app";
 
 const { isFullscreen, toggle } = useFullscreen();
 const isDark = useDark();
@@ -17,6 +18,7 @@ const toggleDark = useToggle(isDark);
 const { setLanguage } = useLanguage();
 const { t } = useI18n();
 const globalStore = useGlobalStore();
+const appStore = useAppStore();
 
 // 退出登录
 const handleOut = () => {
@@ -26,7 +28,12 @@ const handleOut = () => {
 
 <template>
 	<div flex="~ justify-between items-center" px-5 shadow h-full>
-		<div></div>
+		<div flex="~ items-center">
+			<el-icon :size="25" cursor-pointer @click="appStore.setIsCollapse(!appStore.isCollapse)">
+				<Expand v-show="appStore.isCollapse" />
+				<Fold v-show="!appStore.isCollapse" />
+			</el-icon>
+		</div>
 		<div flex="~ items-center">
 			<!-- 国际化 -->
 			<div mr-4>

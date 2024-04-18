@@ -3,11 +3,13 @@
 :root {
 	--text-color: #333;
 	--bg: #ffffff;
+	--theme-bg: #f9f4e7;
 }
 
 .dark {
 	--text-color: #fff;
 	--bg: #141414;
+	--theme-bg: #141414;
 	color-scheme: dark;
 }
 

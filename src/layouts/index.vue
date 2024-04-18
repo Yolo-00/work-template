@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import {} from "vue";
 import Navbar from "./components/Navbar/index.vue";
 import AsideMenu from "./components/AsideMenu/index.vue";
+// pinia
+import { useAppStore } from "@/stores/modules/app";
+
+const appStore = useAppStore();
 </script>
 
 <template>
 	<div>
 		<el-container class="h-100vh">
-			<el-aside width="200px">
+			<el-aside style="transition: width 0.5s" :width="appStore.isCollapse ? '64px' : '200px'">
 				<AsideMenu />
 			</el-aside>
 			<el-container>

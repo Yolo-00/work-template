@@ -4,5 +4,9 @@ export interface GlobalStoreType {
 	language: LanguageType;
 }
 
+export interface appStoreType {
+	isCollapse: boolean;
+}
+
 // * 语言
 export type LanguageType = "zh" | "en";
