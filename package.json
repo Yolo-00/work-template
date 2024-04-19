@@ -89,7 +89,6 @@
 		"rollup-plugin-visualizer": "^5.12.0",
 		"sass": "^1.75.0",
 		"typescript": "^5.4.5",
-		"unplugin-vue-setup-extend-plus": "^1.0.1",
 		"vite": "^5.2.9",
 		"vite-plugin-cdn-import": "^0.3.5",
 		"vite-plugin-compression": "^0.5.1",

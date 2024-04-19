@@ -7,7 +7,6 @@ import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import vueSetupExtend from "unplugin-vue-setup-extend-plus/vite";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import postcssPresetEnv from "postcss-preset-env";
 import UnoCSS from "unocss/vite";
@@ -43,8 +42,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			VueI18nPlugin({
 				include: [path.resolve(__dirname, "./src/language")]
 			}),
-			// * name 可以写在 script 标签上
-			vueSetupExtend({}),
 			// * 是否生成包预览(分析依赖包大小,方便做优化处理)
 			viteEnv.VITE_REPORT &&
 				(visualizer({
