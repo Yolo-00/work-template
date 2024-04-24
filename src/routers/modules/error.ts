@@ -13,11 +13,11 @@ const errorRouter: Array<RouteRecordRaw> = [
 		}
 	},
 	{
-		path: "/:pathMatch(.*)",
-		component: () => import("@/views/error/404.vue"),
+		path: "/:catchAll(.*)",
+		redirect: "/404",
 		meta: {
 			requiresAuth: false,
-			title: "404"
+			title: "err"
 		}
 	}
 ];
