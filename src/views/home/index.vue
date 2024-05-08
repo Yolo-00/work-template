@@ -1,19 +1,12 @@
-<template>
-	<div>
-		<el-button v-copy="'www.baidu.com'">复制</el-button>
-		<el-button type="primary" @click="handlePreview">预览</el-button>
-		<DocxPreview ref="docxPreviewRef" />
-	</div>
-</template>
-
 <script setup lang="ts">
-import { ref } from "vue";
-import DocxPreview from "@/components/DocxPreview/index.vue";
+// i18n
+import { useI18n } from "vue-i18n";
 
-const docxPreviewRef = ref();
-const handlePreview = () => {
-	docxPreviewRef.value();
-};
+const { t } = useI18n();
 </script>
 
-<style scoped lang="scss"></style>
+<template>
+	<div>{{ t("home.home") }}</div>
+</template>
+
+<style lang="scss" scoped></style>

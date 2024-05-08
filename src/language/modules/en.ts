@@ -3,5 +3,8 @@ export default {
 		login: "login",
 		account: "Account",
 		password: "password"
+	},
+	home: {
+		home: "home"
 	}
 };

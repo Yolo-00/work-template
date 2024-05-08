@@ -27,7 +27,7 @@ const appStore = useAppStore();
 										</keep-alive>
 									</transition>
 								</router-view>
-								<el-footer>Footer</el-footer>
+								<!-- <el-footer>Footer</el-footer> -->
 							</div>
 						</el-scrollbar>
 					</el-main>

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 // icon
 import { Moon, Sunny } from "@element-plus/icons-vue";
-// i18n
-import { useI18n } from "vue-i18n";
 // hooks
 import useLanguage from "@/hooks/useLanguage";
 import { useDark, useToggle, useFullscreen } from "@vueuse/core";
@@ -16,7 +14,6 @@ const { isFullscreen, toggle } = useFullscreen();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const { setLanguage } = useLanguage();
-const { t } = useI18n();
 const globalStore = useGlobalStore();
 const appStore = useAppStore();
 
@@ -65,9 +62,6 @@ const handleOut = () => {
 			<!-- 主题 -->
 			<div mr-4>
 				<el-switch :width="45" v-model="isDark" inline-prompt :active-icon="Sunny" :inactive-icon="Moon" @change="toggleDark" />
-			</div>
-			<div>
-				{{ t("login.login") }}
 			</div>
 			<!-- 头像 -->
 			<el-dropdown>
