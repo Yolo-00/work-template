@@ -19,7 +19,7 @@ import { useRouter } from "vue-router";
 // utils
 import { debounce } from "lodash";
 // components
-import PuzzleVerify from "@/components/PuzzleVerify/index.vue";
+import PuzzleVerify from "@/components/PuzzleVerify/index";
 // api
 import { loginApi } from "@/api/modules/login";
 

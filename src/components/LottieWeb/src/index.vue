@@ -1,15 +1,9 @@
 <script setup lang="ts" name="LottieWeb">
 import lottie from "lottie-web";
 import { ref, computed, onMounted, onUnmounted } from "vue";
-import { generateUUID } from "@/utils/util";
+import { generateUUID } from "@/utils";
+import { ImageProps } from "./type";
 
-interface ImageProps {
-	animationData: any; // LottieJSON ==> 必传
-	isLoop?: boolean; // 是否循环播放 ==> 非必传（默认为true）
-	isAutoplay?: boolean; // 是否自动播放 ==> 非必传（默认为true）
-	width?: number; // 组件宽度 ==> 非必传（默认为 250px）
-	height?: number; // 组件高度 ==> 非必传（默认为 250px）
-}
 // 接收父组件参数并设置默认值
 const props = withDefaults(defineProps<ImageProps>(), {
 	isLoop: true,

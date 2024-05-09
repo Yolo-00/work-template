@@ -25,7 +25,7 @@
 
 - **Clone：**
 
-```text
+```bash
 # Gitee
 git clone https://gitee.com/Yolo__00/work-template.git
 
@@ -35,7 +35,7 @@ git clone https://github.com/Yolo-00/work-template.git
 
 - **Install：**
 
-```text
+```bash
 yarn install
 
 # yarn install 安装失败，请升级 nodejs 到 16 以上
@@ -43,13 +43,13 @@ yarn install
 
 - **Run：**
 
-```text
+```bash
 yarn dev
 ```
 
 - **Build：**
 
-```text
+```bash
 # 开发环境
 yarn build:dev
 

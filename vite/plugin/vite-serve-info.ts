@@ -1,5 +1,5 @@
 import { Plugin } from "vite";
-import { printLog } from "../../src/utils/index";
+import { printLog } from "../../src/utils/bashLog";
 import gradientString from "gradient-string";
 import dayjs from "dayjs";
 import pack from "../../package.json";
