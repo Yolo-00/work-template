@@ -35,7 +35,7 @@ onMounted(() => {
 			pollingTime: 300000,
 			localPackageVersion: version,
 			originVersionFileUrl: `${location.origin}${BASE_URL}version.json`,
-			enable: MODE == "production"
+			enable: MODE === "production"
 		},
 		// options
 		{
