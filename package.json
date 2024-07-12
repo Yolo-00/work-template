@@ -47,6 +47,7 @@
 		"@wangeditor/editor-for-vue": "^5.1.12",
 		"axios": "^1.6.8",
 		"dayjs": "^1.11.10",
+		"echarts": "^5.5.1",
 		"element-plus": "^2.7.0",
 		"lodash": "^4.17.21",
 		"lottie-web": "^5.12.2",
