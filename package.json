@@ -51,6 +51,7 @@
 		"element-plus": "^2.7.0",
 		"lodash": "^4.17.21",
 		"lottie-web": "^5.12.2",
+		"monaco-editor": "^0.50.0",
 		"nprogress": "^0.2.0",
 		"pinia": "^2.1.7",
 		"pinia-plugin-persistedstate": "^3.2.1",
