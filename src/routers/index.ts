@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import NProgress from "@/configs/nprogress";
 import { useGlobalStore } from "@/stores/modules/user";
 
@@ -33,7 +33,7 @@ const routers: RouteRecordRaw[] = [
 ];
 
 const router = createRouter({
-	history: createWebHistory(),
+	history: `${import.meta.env.VITE_HASH}` === "true" ? createWebHashHistory() : createWebHistory(),
 	routes: routers,
 	scrollBehavior: () => ({ left: 0, top: 0 })
 });
