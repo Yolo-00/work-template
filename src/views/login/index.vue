@@ -21,7 +21,7 @@ import { debounce } from "lodash";
 // components
 import PuzzleVerify from "@/components/PuzzleVerify/index";
 // api
-import { loginApi } from "@/api/modules/login";
+// import { loginApi } from "@/api/modules/login";
 
 const router = useRouter();
 const { setLanguage } = useLanguage();
@@ -42,14 +42,16 @@ const handleLogin = debounce(() => {
 	formRef.value?.validate(res => {
 		if (!res) return;
 		puzzleVerifyRef.value.open(() => {
-			loginApi({
-				loginName: formData.account,
-				password: formData.password
-			}).then(res => {
-				globalStore.setToken(res.data.accessToken);
-				router.replace("/");
-				// globalStore.setUserInfo();
-			});
+			globalStore.setToken(new Date().getTime().toString());
+			router.replace("/");
+			// loginApi({
+			// 	loginName: formData.account,
+			// 	password: formData.password
+			// }).then(res => {
+			// 	globalStore.setToken(res.data.accessToken);
+			// 	router.replace("/");
+			// 	// globalStore.setUserInfo();
+			// });
 		});
 	});
 }, 500);

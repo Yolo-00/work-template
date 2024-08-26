@@ -19,13 +19,15 @@ interface VeChartsProps {
 	getChangeData?: (params?: any) => EChartsOption; // 处理接口返回数据 ==> 非必传
 	isRealTimeUpdate?: boolean; // 是否实时更新 ==> 非必传（默认为false）
 	realTime?: number; // 实时更新时间间隔 ==> 非必传（默认为5分钟，单位秒）
+	isEmpty?: boolean; // 是否展示缺省页 ==> 非必传（默认为false）
 }
 
 const props = withDefaults(defineProps<VeChartsProps>(), {
 	width: 500,
 	height: 500,
 	realTime: 300,
-	isRealTimeUpdate: false
+	isRealTimeUpdate: false,
+	isEmpty: false
 });
 
 const { initOptions, getApi, getChangeData, realTime, isRealTimeUpdate } = props;
@@ -124,8 +126,8 @@ onBeforeUnmount(() => {
 
 <template>
 	<div>
-		<div v-if="isData" :id="echartsID" :style="myChartStyle"></div>
-		<div :style="myChartStyle" v-if="!isData" v-loading="loading" class="flex items-center justify-center">
+		<div v-if="isData || !isEmpty" :id="echartsID" :style="myChartStyle"></div>
+		<div :style="myChartStyle" v-if="!isData && isEmpty" v-loading="loading" class="flex items-center justify-center">
 			<slot><el-empty description="暂无数据" /></slot>
 		</div>
 	</div>

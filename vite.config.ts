@@ -84,6 +84,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			outDir: "dist",
 			rollupOptions: {
 				output: {
+					compact: true,
 					// * 分包策略
 					manualChunks: (id: string) => {
 						if (id.includes("node_modules")) return "vendor";
