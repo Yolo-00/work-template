@@ -1,13 +1,14 @@
 :root {
 	--el-menu-bg-color: var(--theme-bg);
+	--elSubMenu-item-hover-color: #f6f0ad;
+	--elMenu-item-hover-color: #f6f0ad;
+	--el-menu-active-color: #8400ff;
 }
 
 .el-header {
 	--el-header-padding: "none";
 }
-.el-main {
-	--el-main-padding: "none";
-}
+
 .el-tooltip__trigger:focus-visible {
 	outline: unset;
 }
@@ -18,4 +19,14 @@
 
 .el-menu {
 	border-right: none;
+	.el-menu-item {
+		&:hover {
+			background-color: var(--elMenu-item-hover-color) !important;
+		}
+	}
+	.el-sub-menu .el-sub-menu__title {
+		&:hover {
+			background-color: var(--elSubMenu-item-hover-color) !important;
+		}
+	}
 }

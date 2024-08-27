@@ -13,8 +13,6 @@ const appStore = useAppStore();
 const router = useRouter();
 const route = useRoute();
 
-console.log(router.options.routes);
-
 const routerList = computed<RouteRecordRaw[]>(() => {
 	let list = router.options.routes.map((item: RouteRecordRaw) => (item.children?.length === 1 ? item.children[0] : item));
 	list = list.filter(item => !item.meta?.hidden);
@@ -25,7 +23,6 @@ const activeMenu = computed(() => {
 	const { path } = route;
 	return path;
 });
-console.log(routerList.value);
 </script>
 
 <template>

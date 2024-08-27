@@ -5,6 +5,12 @@ export default {
 		password: "password"
 	},
 	home: {
-		home: "home"
+		home: "Home"
+	},
+	router: {
+		home: "Home",
+		component: "Component",
+		codeEditor: "CodeEditor",
+		wangEditor: "WangEditor"
 	}
 };

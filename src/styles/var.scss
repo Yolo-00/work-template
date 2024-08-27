@@ -3,8 +3,6 @@ $global_size: 32rpx; //全局字体大小
 $white_color: #ffffff; //全局白色字体
 $black_color: #333; //全局黑色字体
 
-// @include
-
 //字体(字体大小,字体颜色,文本字体,字体粗细)
 @mixin font_size($text_size, $text_color, $text_font, $text_weight) {
 	font-size: $text_size;
