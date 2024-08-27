@@ -34,7 +34,14 @@ const activeMenu = computed(() => {
 			</transition>
 		</RouterLink>
 		<el-scrollbar class="h-[calc(100%-3.75rem)]">
-			<el-menu router :default-active="activeMenu" class="el-menu-vertical-demo" :collapse="appStore.isCollapse" unique-opened>
+			<el-menu
+				router
+				:default-active="activeMenu"
+				class="el-menu-vertical-demo"
+				:collapse="appStore.isCollapse"
+				unique-opened
+				:collapse-transition="false"
+			>
 				<SubMenuItem
 					v-for="(routeItem, index) in routerList"
 					:key="routeItem.path + index"

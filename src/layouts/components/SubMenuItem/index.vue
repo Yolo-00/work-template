@@ -16,26 +16,28 @@ defineProps({
 </script>
 
 <template>
-	<div>
-		<el-menu-item v-if="!item.children" :index="basePath">
+	<el-menu-item v-if="!item.children" :index="basePath">
+		<div class="flex items-center">
 			<SvgIcon :icon-style="{ width: '25px', height: '25px' }" :name="item.meta?.icon" />
-			<template #title>
-				<span class="ml-2 truncate">{{ item.meta?.title }}</span>
-			</template>
-		</el-menu-item>
-		<el-sub-menu v-else :index="item.path">
-			<template #title>
+		</div>
+		<template #title>
+			<span class="ml-2 truncate">{{ item.meta?.title }}</span>
+		</template>
+	</el-menu-item>
+	<el-sub-menu v-else :index="item.path">
+		<template #title>
+			<div class="flex items-center">
 				<SvgIcon :icon-style="{ width: '25px', height: '25px' }" :name="item.meta?.icon" />
-				<span class="ml-2 truncate">{{ item.meta?.title }}</span>
-			</template>
-			<SubMenuItem
-				v-for="(routeItem, index) in item.children"
-				:key="routeItem.path + index"
-				:item="routeItem"
-				:base-path="basePath + '/' + routeItem.path"
-			/>
-		</el-sub-menu>
-	</div>
+			</div>
+			<span class="ml-2 truncate">{{ item.meta?.title }}</span>
+		</template>
+		<SubMenuItem
+			v-for="(routeItem, index) in item.children"
+			:key="routeItem.path + index"
+			:item="routeItem"
+			:base-path="basePath + '/' + routeItem.path"
+		/>
+	</el-sub-menu>
 </template>
 
 <style lang="scss" scoped></style>

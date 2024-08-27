@@ -61,7 +61,6 @@ defineExpose({
 					<el-tooltip effect="dark" content="下载">
 						<SvgIcon
 							ml-2
-							color="#000"
 							cursor-pointer
 							@click="handleDownload"
 							:icon-style="{ width: '20px', height: '20px' }"
@@ -69,14 +68,7 @@ defineExpose({
 						/>
 					</el-tooltip>
 					<el-tooltip effect="dark" content="打印">
-						<SvgIcon
-							ml-2
-							color="#000"
-							cursor-pointer
-							@click="handlePrint"
-							:icon-style="{ width: '20px', height: '20px' }"
-							name="printing"
-						/>
+						<SvgIcon ml-2 cursor-pointer @click="handlePrint" :icon-style="{ width: '20px', height: '20px' }" name="printing" />
 					</el-tooltip>
 				</div>
 			</div>

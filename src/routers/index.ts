@@ -28,7 +28,7 @@ const routers: RouteRecordRaw[] = [
 					requiresAuth: true,
 					title: "首页",
 					key: "home",
-					icon: "date-range"
+					icon: "xianxingxiarilengyin"
 				}
 			}
 		]
