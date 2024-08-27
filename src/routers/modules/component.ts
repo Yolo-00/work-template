@@ -28,7 +28,7 @@ const componentRouter: Array<RouteRecordRaw> = [
 			{
 				path: "wangEditor",
 				name: "WangEditor",
-				component: () => import("@/views/components/wangEditor/index.vue"),
+				component: () => import("@/views/components/richEditor/index.vue"),
 				meta: {
 					requiresAuth: true,
 					title: "富文本编辑器",
