@@ -36,7 +36,7 @@ const handleOut = () => {
 			<div mr-4>
 				<el-dropdown>
 					<div cursor-pointer>
-						<SvgIcon color="#333" :icon-style="{ width: '20px', height: '20px' }" name="language" />
+						<SvgIcon :icon-style="{ width: '20px', height: '20px' }" name="language" />
 					</div>
 					<template #dropdown>
 						<el-dropdown-menu>
@@ -53,7 +53,6 @@ const handleOut = () => {
 			<!-- 全屏 -->
 			<div mr-4 cursor-pointer>
 				<SvgIcon
-					color="#333"
 					:icon-style="{ width: '20px', height: '20px' }"
 					:name="isFullscreen ? 'fullscreen-exit' : 'fullscreen'"
 					@click="toggle"

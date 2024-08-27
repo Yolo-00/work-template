@@ -16,9 +16,9 @@ const appStore = useAppStore();
 			<el-container>
 				<el-header><Navbar /></el-header>
 				<el-container>
-					<el-main style="height: calc(100vh - 60px)">
+					<el-main style="height: calc(100vh - 60px)" class="bg-gray-100">
 						<el-scrollbar>
-							<div p-3>
+							<div m-5 p-5 bg-white rounded-lg>
 								<!-- 子路由 -->
 								<router-view v-slot="{ Component, route }">
 									<transition name="slide-fade">

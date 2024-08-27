@@ -7,6 +7,7 @@ const errorRouter: Array<RouteRecordRaw> = [
 		name: "404",
 		component: () => import("@/views/error/404.vue"),
 		meta: {
+			hidden: true,
 			requiresAuth: false,
 			title: "404",
 			key: "err"
@@ -16,6 +17,7 @@ const errorRouter: Array<RouteRecordRaw> = [
 		path: "/:catchAll(.*)",
 		redirect: "/404",
 		meta: {
+			hidden: true,
 			requiresAuth: false,
 			title: "err"
 		}

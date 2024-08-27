@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory, type RouteRecordRaw } from "vue-router";
 import NProgress from "@/configs/nprogress";
 import { useGlobalStore } from "@/stores/modules/user";
 
@@ -17,14 +17,29 @@ Object.keys(metaRouters).forEach(item => {
 const routers: RouteRecordRaw[] = [
 	{
 		path: "/",
-		redirect: "/home"
+		component: () => import("@/layouts/index.vue"),
+		redirect: "/home",
+		children: [
+			{
+				path: "/home",
+				name: "Home",
+				component: () => import("@/views/home/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "首页",
+					key: "home",
+					icon: "date-range"
+				}
+			}
+		]
 	},
 	...routerArray,
 	{
 		path: "/login",
-		name: "login",
+		name: "Login",
 		component: () => import("@/views/login/index.vue"),
 		meta: {
+			hidden: true,
 			requiresAuth: false,
 			title: "登录",
 			key: "login"

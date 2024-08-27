@@ -2,7 +2,7 @@
 // i18n
 import { useI18n } from "vue-i18n";
 import { QRCode } from "@/components/QRCode/index";
-import { VCharts } from "@/components/VCharts/index";
+// import { VCharts } from "@/components/VCharts/index";
 import { onMounted, ref } from "vue";
 
 const { t } = useI18n();
@@ -58,7 +58,7 @@ onMounted(() => {
 	<div>
 		<QRCode content="www.baidu.com" />
 		<div>{{ t("home.home") }}</div>
-		<VCharts :options="configData"> </VCharts>
+		<!-- <VCharts :options="configData"> </VCharts> -->
 	</div>
 </template>
 
