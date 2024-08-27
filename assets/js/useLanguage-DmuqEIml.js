@@ -1,0 +1,1 @@
+import{u as t}from"./index-DZ_djtws.js";import{a6 as u}from"./vendor-BF-3gPpG.js";function g(){const a=t(),{locale:o}=u();return{setLanguage:e=>{e!=a.language&&(a.setLanguage(e),o.value=e)}}}export{g as u};
