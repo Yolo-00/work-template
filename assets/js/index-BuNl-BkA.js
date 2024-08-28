@@ -1,1 +1,0 @@
-import{e as t,a6 as l,h as n,i as r,u,j as s,ao as d}from"./vendor-DiP0UIoL.js";const c=t({__name:"index",setup(i){const e=l("# Hello Editor");return(m,o)=>(s(),n("div",null,[r(u(d),{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=a=>e.value=a),"input-box-witdh":"60%"},null,8,["modelValue"])]))}});export{c as default};
