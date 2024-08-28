@@ -9,6 +9,8 @@ import Avatar from "@/assets/images/avatar.png";
 // pinia
 import { useGlobalStore } from "@/stores/modules/user";
 import { useAppStore } from "@/stores/modules/app";
+import { computed, watchEffect } from "vue";
+import { useRoute } from "vue-router";
 
 const { isFullscreen, toggle } = useFullscreen();
 const isDark = useDark();
@@ -16,11 +18,18 @@ const toggleDark = useToggle(isDark);
 const { setLanguage } = useLanguage();
 const globalStore = useGlobalStore();
 const appStore = useAppStore();
+const route = useRoute();
+
+// 面包屑
+const crumbsList = computed(() => appStore.crumbsList.filter(item => item.path !== "/"));
 
 // 退出登录
 const handleOut = () => {
 	globalStore.setReset();
 };
+watchEffect(() => {
+	console.log(route);
+});
 </script>
 
 <template>
@@ -30,6 +39,12 @@ const handleOut = () => {
 				<Expand v-show="appStore.isCollapse" />
 				<Fold v-show="!appStore.isCollapse" />
 			</el-icon>
+			<!-- 面包屑 -->
+			<el-breadcrumb class="ml-5">
+				<el-breadcrumb-item v-for="(item, index) in crumbsList" :key="index" :to="item.path">
+					{{ item.meta.title }}
+				</el-breadcrumb-item>
+			</el-breadcrumb>
 		</div>
 		<div flex="~ items-center">
 			<!-- 国际化 -->
@@ -51,7 +66,7 @@ const handleOut = () => {
 				</el-dropdown>
 			</div>
 			<!-- 全屏 -->
-			<div mr-4 cursor-pointer>
+			<div mr-4 cursor-pointer max-md:hidden>
 				<SvgIcon
 					:icon-style="{ width: '20px', height: '20px' }"
 					:name="isFullscreen ? 'fullscreen-exit' : 'fullscreen'"

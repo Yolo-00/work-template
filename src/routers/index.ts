@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory, type RouteRecordRaw } from "vue-router";
 import NProgress from "@/configs/nprogress";
 import { useGlobalStore } from "@/stores/modules/user";
+import { useAppStore } from "@/stores/modules/app";
 
 // * 导入所有router
 const metaRouters = import.meta.glob("./modules/*.ts", { eager: true });
@@ -58,6 +59,7 @@ const router = createRouter({
  * */
 router.beforeEach(async (to, from, next) => {
 	const globalStore = useGlobalStore();
+	const appStore = useAppStore();
 
 	// 1.NProgress 开始
 	NProgress.start();
@@ -75,7 +77,10 @@ router.beforeEach(async (to, from, next) => {
 	// 4.判断是否有 Token，没有重定向到 login
 	if (!globalStore.token && to.meta.requiresAuth) return next({ path: "/login", replace: true });
 
-	// 5.正常访问页面
+	// 5.设置面包屑
+	appStore.setCrumbsList(to.matched);
+
+	// 6.正常访问页面
 	next();
 });
 

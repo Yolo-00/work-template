@@ -1,3 +1,5 @@
+import { RouteRecordNormalized } from "vue-router";
+
 export interface GlobalStoreType {
 	token: string;
 	userInfo: any;
@@ -6,6 +8,7 @@ export interface GlobalStoreType {
 
 export interface appStoreType {
 	isCollapse: boolean;
+	crumbsList: RouteRecordNormalized[];
 }
 
 // * 语言
