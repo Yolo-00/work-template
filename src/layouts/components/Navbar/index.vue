@@ -9,8 +9,8 @@ import Avatar from "@/assets/images/avatar.png";
 // pinia
 import { useGlobalStore } from "@/stores/modules/user";
 import { useAppStore } from "@/stores/modules/app";
-import { computed, watchEffect } from "vue";
-import { useRoute } from "vue-router";
+// Vue
+import { computed } from "vue";
 
 const { isFullscreen, toggle } = useFullscreen();
 const isDark = useDark();
@@ -18,7 +18,6 @@ const toggleDark = useToggle(isDark);
 const { setLanguage } = useLanguage();
 const globalStore = useGlobalStore();
 const appStore = useAppStore();
-const route = useRoute();
 
 // 面包屑
 const crumbsList = computed(() => appStore.crumbsList.filter(item => item.path !== "/"));
@@ -27,9 +26,6 @@ const crumbsList = computed(() => appStore.crumbsList.filter(item => item.path !
 const handleOut = () => {
 	globalStore.setReset();
 };
-watchEffect(() => {
-	console.log(route);
-});
 </script>
 
 <template>

@@ -1,6 +1,11 @@
 @import "./dark.scss";
 @import "./element-plus.scss";
 
+// 灰色模式
+.html-grey {
+	filter: grayscale(100%);
+}
+
 .flex_body {
 	display: flex;
 }
