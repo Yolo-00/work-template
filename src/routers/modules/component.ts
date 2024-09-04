@@ -57,6 +57,17 @@ const componentRouter: Array<RouteRecordRaw> = [
 					key: "preview",
 					icon: "xianxingfanchuan"
 				}
+			},
+			{
+				path: "masonry",
+				name: "Masonry",
+				component: () => import("@/views/components/masonry/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "瀑布流布局",
+					key: "masonry",
+					icon: "xianxingfanchuan"
+				}
 			}
 		]
 	}

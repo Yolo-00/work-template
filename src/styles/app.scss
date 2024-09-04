@@ -6,33 +6,6 @@
 	filter: grayscale(100%);
 }
 
-.flex_body {
-	display: flex;
-}
-
-.flex_center {
-	display: flex;
-	align-items: center;
-}
-
-.flex_justify_center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.flex_center_between {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.text_omit {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
 /* nprogress样式 */
 #nprogress .bar {
 	background: #7963f9 !important;
