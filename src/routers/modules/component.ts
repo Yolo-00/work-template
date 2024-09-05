@@ -66,7 +66,30 @@ const componentRouter: Array<RouteRecordRaw> = [
 					requiresAuth: true,
 					title: "瀑布流布局",
 					key: "masonry",
-					icon: "xianxingfanchuan"
+					icon: "xianxingzijiayou"
+				}
+			},
+			{
+				path: "qrCode",
+				name: "QrCode",
+				component: () => import("@/views/components/qrCode/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "生成二维码",
+					key: "qrCode",
+					icon: "xianxingtianqiyubao"
+				}
+			},
+			{
+				path: "fragment",
+				name: "Fragment",
+				component: () => import("@/views/components/fragment/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "碎片化图片",
+					key: "fragment",
+					noKeepAlive: true,
+					icon: "xianxingditu"
 				}
 			}
 		]

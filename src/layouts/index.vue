@@ -1,6 +1,21 @@
 <script setup lang="ts">
 import Navbar from "./components/Navbar/index.vue";
 import AsideMenu from "./components/AsideMenu/index.vue";
+// vue
+import { computed } from "vue";
+// vue-router
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const routerInclude = computed(() => {
+	console.log();
+	const list = router
+		.getRoutes()
+		.filter(item => item.meta?.noKeepAlive)
+		.map(item => item.meta?.key);
+	return list;
+});
 </script>
 
 <template>
@@ -15,7 +30,7 @@ import AsideMenu from "./components/AsideMenu/index.vue";
 							<div class="dark:bg-[var(--theme-bg)]" p-5 bg-white rounded-lg>
 								<!-- 子路由 -->
 								<router-view v-slot="{ Component, route }">
-									<transition name="slide-fade">
+									<transition name="slide-fade" :include="routerInclude">
 										<keep-alive>
 											<component :is="Component" :key="route.path" />
 										</keep-alive>
