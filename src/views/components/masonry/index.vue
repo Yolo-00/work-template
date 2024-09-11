@@ -83,10 +83,4 @@ onMounted(async () => {
 	</div>
 </template>
 
-<style lang="scss" scoped>
-.grid-list {
-	display: grid;
-	grid-template-columns: repeat(3, 33.33%);
-	justify-content: space-between;
-}
-</style>
+<style lang="scss" scoped></style>

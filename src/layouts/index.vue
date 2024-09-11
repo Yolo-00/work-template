@@ -8,12 +8,11 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const routerInclude = computed(() => {
-	console.log();
+const routerInclude = computed<string[]>(() => {
 	const list = router
 		.getRoutes()
 		.filter(item => item.meta?.noKeepAlive)
-		.map(item => item.meta?.key);
+		.map(item => item.meta?.key) as string[];
 	return list;
 });
 </script>
@@ -30,8 +29,8 @@ const routerInclude = computed(() => {
 							<div class="dark:bg-[var(--theme-bg)]" p-5 bg-white rounded-lg>
 								<!-- 子路由 -->
 								<router-view v-slot="{ Component, route }">
-									<transition name="slide-fade" :include="routerInclude">
-										<keep-alive>
+									<transition name="slide-fade">
+										<keep-alive :include="routerInclude">
 											<component :is="Component" :key="route.path" />
 										</keep-alive>
 									</transition>
