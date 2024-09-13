@@ -1,0 +1,1 @@
+import{e as t,a6 as r,h as l,i as s,r as u,j as p}from"./vendor-DiWdzAwd.js";const m=t({__name:"index",setup(d){const e=r("");return(i,n)=>{const a=u("WangEditor");return p(),l("div",null,[s(a,{value:e.value,"onUpdate:value":n[0]||(n[0]=o=>e.value=o)},null,8,["value"])])}}});export{m as default};

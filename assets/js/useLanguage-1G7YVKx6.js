@@ -1,1 +1,0 @@
-import{u as t}from"./index-Nn9_JbV3.js";import{a5 as u}from"./vendor-CbUR9-qa.js";function g(){const a=t(),{locale:o}=u();return{setLanguage:e=>{e!=a.language&&(a.setLanguage(e),o.value=e)}}}export{g as u};
