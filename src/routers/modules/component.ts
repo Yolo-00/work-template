@@ -91,6 +91,17 @@ const componentRouter: Array<RouteRecordRaw> = [
 					noKeepAlive: true,
 					icon: "xianxingditu"
 				}
+			},
+			{
+				path: "splitPanel",
+				name: "SplitPanel",
+				component: () => import("@/views/components/splitPanel/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "分割面板",
+					key: "splitPanel",
+					icon: "xianxingxiarilengyin"
+				}
 			}
 		]
 	}

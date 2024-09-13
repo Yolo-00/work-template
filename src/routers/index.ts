@@ -15,6 +15,18 @@ Object.keys(metaRouters).forEach(item => {
 	});
 });
 
+/**
+ * Note: 路由配置项
+ *
+ * meta : {
+    requiresAuth: true              // 如果设置为true，表示此页面需要用户认证
+    title: 'title'                  // 设置该路由在侧边栏和面包屑中展示的名字
+    key: 'home'                		// 用于唯一标识此页面的键值
+    noKeepAlive: true               // 如果设置为true，表明此页面组件不需要被缓存
+    icon: 'xianxingditu'      		// 置页面的图标为“xianxingditu”
+  }
+ */
+
 const routers: RouteRecordRaw[] = [
 	{
 		path: "/",
