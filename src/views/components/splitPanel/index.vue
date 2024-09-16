@@ -13,7 +13,7 @@ import "splitpanes/dist/splitpanes.css";
 
 		<splitpanes class="default-theme h-100! mt-5">
 			<pane class="pane-item" min-size="20"> 1 </pane>
-			<pane>
+			<pane min-size="20">
 				<splitpanes horizontal>
 					<pane min-size="20" class="pane-item">2</pane>
 					<pane min-size="20" class="pane-item">3</pane>

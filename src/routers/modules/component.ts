@@ -102,6 +102,17 @@ const componentRouter: Array<RouteRecordRaw> = [
 					key: "splitPanel",
 					icon: "xianxingxiarilengyin"
 				}
+			},
+			{
+				path: "draggable",
+				name: "Draggable",
+				component: () => import("@/views/components/draggable/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "拖动面板",
+					key: "draggable",
+					icon: "xianxingzijiayou"
+				}
 			}
 		]
 	}
