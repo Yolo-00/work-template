@@ -75,14 +75,14 @@ const onTouchEnd = () => {
 
 <template>
 	<div>
-		<draggable v-model="list" item-key="id" v-if="true">
+		<draggable v-model="list" item-key="id" class="max-md:hidden">
 			<template #item="{ element }">
 				<el-card class="mt-5">
 					<div>{{ element.name }}</div>
 				</el-card>
 			</template>
 		</draggable>
-		<div class="w-80 grid grid-cols-3 bg-gray-300 p-5 gap-5" v-else>
+		<div class="w-80 grid grid-cols-3 bg-gray-300 p-5 gap-5 md:hidden">
 			<div
 				v-for="(item, index) in list"
 				:key="item.id"
