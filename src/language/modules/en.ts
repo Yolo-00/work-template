@@ -2,7 +2,8 @@ export default {
 	login: {
 		login: "login",
 		account: "Account",
-		password: "password"
+		password: "password",
+		auth: "Github Auth"
 	},
 	home: {
 		home: "Home"

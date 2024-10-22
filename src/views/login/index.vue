@@ -2,10 +2,10 @@
 // icon
 import { Moon, Sunny } from "@element-plus/icons-vue";
 // hooks
-import { useDark, useToggle } from "@vueuse/core";
+import { useDark, useToggle, useSessionStorage } from "@vueuse/core";
 import useLanguage from "@/hooks/useLanguage";
 // vue
-import { reactive, ref } from "vue";
+import { reactive, ref, onBeforeMount } from "vue";
 // params
 import { formRules } from "./index";
 // types
@@ -55,6 +55,49 @@ const handleLogin = debounce(() => {
 		});
 	});
 }, 500);
+
+const clientId = "Ov23liyRpMRmQeOGgqel"; // GitHub OAuth Client ID
+const redirectUri = "http://192.168.3.6:1103/#/login"; // 重定向的回调URL
+const state = useSessionStorage("state", new Date().toLocaleString());
+const type: number = 2; // 1 重定向方式授权登陆 2 弹窗式授权登陆
+const handleAuth = () => {
+	const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=user&state=${state.value}`;
+	if (type === 1) {
+		window.location.href = githubAuthUrl; // 重定向到 GitHub 的授权页面
+	} else if (type === 2) {
+		const githubPopup = window.open(githubAuthUrl, "oauthWindow", "width=600,height=700");
+		if (githubPopup) {
+			// 监听弹出窗口关闭，或者在窗口内通过 postMessage 传递数据回来
+			window.addEventListener("message", getGithubCallBack, false);
+		}
+	}
+};
+const getGithubCallBack = (event: any) => {
+	const { code, state } = event.data;
+	console.log("Received authorization:", code, state);
+	// 继续处理授权结果，如请求 access_token 等
+	if (code && state) {
+		globalStore.setToken(code || "");
+		router.replace("/");
+		// 移除事件监听
+		window.removeEventListener("message", getGithubCallBack);
+	}
+};
+onBeforeMount(() => {
+	const urlParams = new URLSearchParams(location.search);
+	if (urlParams.get("code") && urlParams.get("state")) {
+		console.log("code", urlParams.get("code"));
+		console.log("state", urlParams.get("state"));
+		console.log(state.value);
+		if (type === 1) {
+			globalStore.setToken(new URLSearchParams(location.search).get("code") || "");
+			window.location.href = location.origin;
+		} else if (type === 2) {
+			window.opener.postMessage({ code: urlParams.get("code"), state: urlParams.get("state") }, location.origin);
+			window.close(); // 关闭弹出窗口
+		}
+	}
+});
 </script>
 
 <template>
@@ -107,6 +150,9 @@ const handleLogin = debounce(() => {
 				</el-form-item>
 				<el-form-item>
 					<el-button type="primary" w-full @click="handleLogin">{{ t("login.login") }}</el-button>
+				</el-form-item>
+				<el-form-item>
+					<el-button type="info" w-full @click="handleAuth">{{ t("login.auth") }}</el-button>
 				</el-form-item>
 			</el-form>
 		</div>
