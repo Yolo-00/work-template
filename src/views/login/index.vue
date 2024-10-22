@@ -57,7 +57,7 @@ const handleLogin = debounce(() => {
 }, 500);
 
 const clientId = "Ov23liyRpMRmQeOGgqel"; // GitHub OAuth Client ID
-const redirectUri = "http://192.168.3.6:1103/#/login"; // 重定向的回调URL
+const redirectUri = `${location.origin}/#/login`; // 重定向的回调URL
 const state = useSessionStorage("state", new Date().toLocaleString());
 const type: number = 2; // 1 重定向方式授权登陆 2 弹窗式授权登陆
 const handleAuth = () => {
