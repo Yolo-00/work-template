@@ -23,6 +23,7 @@
 		"url": "https://github.com/Yolo-00/work-template.git"
 	},
 	"keywords": [
+		"vue-template",
 		"work-template",
 		"vue",
 		"typescript",
@@ -65,6 +66,7 @@
 		"version-rocket": "^1.7.1",
 		"vue": "^3.4.23",
 		"vue-i18n": "^9.13.0",
+		"vue-json-pretty": "^2.4.0",
 		"vue-pdf-embed": "^2.0.2",
 		"vue-router": "^4.3.2",
 		"vue3-puzzle-vcode": "^1.1.7",

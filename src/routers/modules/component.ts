@@ -113,6 +113,17 @@ const componentRouter: Array<RouteRecordRaw> = [
 					key: "draggable",
 					icon: "xianxingzijiayou"
 				}
+			},
+			{
+				path: "jsonPretty",
+				name: "JsonPretty",
+				component: () => import("@/views/components/jsonPretty/index.vue"),
+				meta: {
+					requiresAuth: true,
+					title: "JSON美化",
+					key: "jsonPretty",
+					icon: "xianxingyoulun"
+				}
 			}
 		]
 	}
