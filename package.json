@@ -1,7 +1,7 @@
 {
 	"name": "work-template",
 	"private": true,
-	"version": "1.7.0",
+	"version": "2.0.0",
 	"type": "module",
 	"description": "work-template框架",
 	"author": {
