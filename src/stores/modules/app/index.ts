@@ -1,7 +1,20 @@
 import { defineStore } from "pinia";
 import piniaPersistConfig from "@/configs/piniaPersist";
 import type { appStoreType } from "../../interface";
-import { RouteRecordNormalized } from "vue-router";
+import type { CustomRouteRecordRaw } from "@/routers/interface/index";
+
+// * 导入所有router
+const metaRouters = import.meta.glob("@/routers/modules/*.ts", { eager: true });
+// * 导入所有views
+const viewsModules = import.meta.glob("@/views/**/*.vue");
+// * 处理路由表
+export const routerArray: CustomRouteRecordRaw[] = [];
+
+Object.keys(metaRouters).forEach(item => {
+	Object.keys(metaRouters[item] as object).forEach(key => {
+		routerArray.push(...(metaRouters[item] as any)[key]);
+	});
+});
 
 // defineStore 调用后返回一个函数，调用该函数获得 Store 实体
 export const useAppStore = defineStore({
@@ -12,7 +25,11 @@ export const useAppStore = defineStore({
 		// 菜单是否折叠
 		isCollapse: false,
 		// 面包屑
-		crumbsList: []
+		crumbsList: [],
+		// 菜单列表
+		menuList: [],
+		// 添加路由列表
+		addRouterList: []
 	}),
 	getters: {},
 	actions: {
@@ -21,10 +38,53 @@ export const useAppStore = defineStore({
 			this.isCollapse = isCollapse;
 		},
 		// set面包屑
-		setCrumbsList(crumbsList: RouteRecordNormalized[]) {
+		setCrumbsList(crumbsList: CustomRouteRecordRaw[]) {
 			this.crumbsList = crumbsList;
+		},
+		// set菜单列表
+		async getMenuList() {
+			const routerList = await this.getRouterArray();
+			this.menuList = getChangeMenuList(routerList as CustomRouteRecordRaw[]);
+			this.setAddRouterList(this.menuList);
+		},
+		// set 添加路由菜单
+		setAddRouterList(menuList: CustomRouteRecordRaw[]) {
+			this.addRouterList = getChangeRouterList(menuList);
+		},
+		// 获取路由表,模拟请求接口获取路由表
+		getRouterArray() {
+			return new Promise(resolve => {
+				resolve(routerArray);
+			});
 		}
 	},
 	// [] 需要持久化的state,不传默认全部持久化
-	persist: piniaPersistConfig("appState")
+	persist: piniaPersistConfig("appState", ["isCollapse", "crumbsList"])
 });
+
+// 处理菜单表
+export const getChangeMenuList = (routers: CustomRouteRecordRaw[]) => {
+	return routers
+		.map(item => {
+			if (item.children && item.children.length > 0) {
+				item.children = getChangeMenuList(item.children);
+			}
+			return item;
+		})
+		.filter(item => !item.meta?.hidden)
+		.sort((a: any, b: any) => a.meta?.sort - b.meta?.sort);
+};
+
+// 处理路由表
+export const getChangeRouterList = (menuList: CustomRouteRecordRaw[], list: CustomRouteRecordRaw[] = []) => {
+	menuList.forEach(item => {
+		if (item.children) {
+			getChangeRouterList(item.children, list);
+		}
+		if (item.component) {
+			item.component = viewsModules["/src/views" + item.component + ".vue"];
+		}
+		list.push(item);
+	});
+	return list;
+};

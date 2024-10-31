@@ -3,7 +3,8 @@ import { computed } from "vue";
 // pinia
 import { useAppStore } from "@/stores/modules/app";
 // vue-router
-import { useRouter, useRoute, type RouteRecordRaw } from "vue-router";
+import { useRoute } from "vue-router";
+import type { CustomRouteRecordRaw } from "@/routers/interface/index";
 // component
 import SubMenuItem from "../SubMenuItem/index.vue";
 // vueuse
@@ -13,17 +14,22 @@ const title = import.meta.env.VITE_APP_TITLE;
 
 const { width } = useWindowSize();
 const appStore = useAppStore();
-const router = useRouter();
 const route = useRoute();
 
-const routerList = computed<RouteRecordRaw[]>(() => {
-	let list = router.options.routes.map((item: RouteRecordRaw) => (item.children?.length === 1 ? item.children[0] : item));
-	list = list.filter(item => !item.meta?.hidden);
-	return list;
-});
+const routerList = computed<CustomRouteRecordRaw[]>(() => appStore.menuList);
+
+// 处理面包屑
+const getAllBreadcrumbList = (menuList: CustomRouteRecordRaw[], parent = [], result: { [key: string]: any } = {}) => {
+	for (const item of menuList) {
+		result[item.path] = [...parent, item];
+		if (item.children) getAllBreadcrumbList(item.children, result[item.path], result);
+	}
+	return result;
+};
 
 const activeMenu = computed(() => {
 	const { path } = route;
+	appStore.setCrumbsList(getAllBreadcrumbList(appStore.menuList)[route.matched[route.matched.length - 1].path]);
 	return path;
 });
 </script>

@@ -24,7 +24,7 @@ const routerInclude = computed<string[]>(() => {
 			<el-container>
 				<el-header><Navbar /></el-header>
 				<el-container>
-					<el-main style="height: calc(100vh - 60px)" class="bg-gray-100 dark-bg-black">
+					<el-main class="bg-gray-100 dark-bg-black h-[calc(100vh-60px)]">
 						<el-scrollbar>
 							<div class="dark:bg-[var(--theme-bg)]" p-5 bg-white rounded-lg>
 								<!-- 子路由 -->

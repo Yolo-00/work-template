@@ -3,59 +3,65 @@ import NProgress from "@/configs/nprogress";
 import { useGlobalStore } from "@/stores/modules/user";
 import { useAppStore } from "@/stores/modules/app";
 
-// * 导入所有router
-const metaRouters = import.meta.glob("./modules/*.ts", { eager: true });
-
-// * 处理路由表
-export const routerArray: RouteRecordRaw[] = [];
-
-Object.keys(metaRouters).forEach(item => {
-	Object.keys(metaRouters[item] as object).forEach(key => {
-		routerArray.push(...(metaRouters[item] as any)[key]);
-	});
-});
-
 /**
  * Note: 路由配置项
  *
  * meta : {
-    requiresAuth: true              // 如果设置为true，表示此页面需要用户认证
+	hidden: true                    // 当设置 true 的时候该路由不会在侧边栏出现 如401,login等页面,默认false
+    requiresAuth: true              // 如果设置为true，表示此页面需要用户认证,默认false
     title: 'title'                  // 设置该路由在侧边栏和面包屑中展示的名字
     key: 'home'                		// 用于唯一标识此页面的键值
     noKeepAlive: true               // 如果设置为true，表明此页面组件不需要被缓存
     icon: 'xianxingditu'      		// 置页面的图标为“xianxingditu”
+	noLayout: true 					// 如果设置为true,表示此页面不需要layout布局,默认为false
+	sort: 1                          // 菜单排序，越大越靠后
   }
  */
 
 const routers: RouteRecordRaw[] = [
 	{
 		path: "/",
+		meta: {
+			hidden: true
+		},
+		redirect: "/layout",
+		children: []
+	},
+	{
+		path: "/layout",
+		name: "layout",
+		meta: {
+			hidden: true
+		},
 		component: () => import("@/layouts/index.vue"),
 		redirect: "/home",
-		children: [
-			{
-				path: "/home",
-				name: "Home",
-				component: () => import("@/views/home/index.vue"),
-				meta: {
-					requiresAuth: true,
-					title: "首页",
-					key: "home",
-					icon: "xianxingxiarilengyin"
-				}
-			}
-		]
+		children: []
 	},
-	...routerArray,
 	{
 		path: "/login",
 		name: "Login",
 		component: () => import("@/views/login/index.vue"),
 		meta: {
 			hidden: true,
-			requiresAuth: false,
 			title: "登录",
 			key: "login"
+		}
+	},
+	{
+		path: "/404",
+		name: "404",
+		component: () => import("@/views/error/404.vue"),
+		meta: {
+			hidden: true,
+			title: "404",
+			key: "err"
+		}
+	},
+	{
+		path: "/:catchAll(.*)",
+		redirect: "/404",
+		meta: {
+			hidden: true
 		}
 	}
 ];
@@ -76,21 +82,33 @@ router.beforeEach(async (to, from, next) => {
 	// 1.NProgress 开始
 	NProgress.start();
 
-	// 2.动态设置标题
+	// 2. 判断是否有 Token，没有重定向到 login
+	if (!globalStore.token && to.meta.requiresAuth) return next({ path: "/login", replace: true });
+
+	// 3. 添加路由
+	if (!appStore.menuList.length) {
+		await appStore.getMenuList();
+		appStore.addRouterList.forEach(route => {
+			if (!router.hasRoute(route.name as string)) {
+				if (route.meta?.noLayout) {
+					router.addRoute(route as RouteRecordRaw);
+				} else {
+					router.addRoute("layout", route as RouteRecordRaw);
+				}
+			}
+		});
+		return next({ path: to.redirectedFrom?.path, replace: true });
+	}
+
+	// 4.动态设置标题
 	const title = import.meta.env.VITE_APP_TITLE;
 	document.title = to.meta.title ? `${to.meta.title} - ${title}` : title;
 
-	// 3.判断是访问登陆页，有 Token 就在当前页面，没有 Token 重置路由并放行到登陆页
+	// 5.判断是访问登陆页，有 Token 就在当前页面，没有 Token 重置路由并放行到登陆页
 	if (to.path === "/login") {
 		if (globalStore.token) return next(from.fullPath);
 		return next();
 	}
-
-	// 4.判断是否有 Token，没有重定向到 login
-	if (!globalStore.token && to.meta.requiresAuth) return next({ path: "/login", replace: true });
-
-	// 5.设置面包屑
-	appStore.setCrumbsList(to.matched);
 
 	// 6.正常访问页面
 	next();

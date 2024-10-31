@@ -1,128 +1,129 @@
-import { RouteRecordRaw } from "vue-router";
+import type { CustomRouteRecordRaw } from "../interface";
 
-// 首页模块
-const componentRouter: Array<RouteRecordRaw> = [
+// 组件模块
+const componentRouter: Array<CustomRouteRecordRaw> = [
 	{
 		path: "/component",
 		name: "Component",
-		component: () => import("@/layouts/index.vue"),
-		redirect: "/component/codeEditor",
 		meta: {
-			requiresAuth: true,
 			title: "组件模块",
 			key: "component",
-			icon: "xianxingdiqiu"
+			icon: "xianxingdiqiu",
+			sort: 3
 		},
+		redirect: "/component/codeEditor",
 		children: [
 			{
-				path: "codeEditor",
+				path: "/component/codeEditor",
 				name: "CodeEditor",
-				component: () => import("@/views/components/codeEditor/index.vue"),
+				component: "/components/codeEditor/index",
 				meta: {
-					requiresAuth: true,
 					title: "代码编辑器",
 					key: "codeEditor",
-					icon: "xianxingfeiji"
+					icon: "xianxingfeiji",
+					sort: 1
 				}
 			},
 			{
-				path: "wangEditor",
+				path: "/component/wangEditor",
 				name: "WangEditor",
-				component: () => import("@/views/components/wangEditor/index.vue"),
+				component: "/components/wangEditor/index",
 				meta: {
-					requiresAuth: true,
 					title: "富文本编辑器",
 					key: "wangEditor",
-					icon: "xianxinglvhangriji"
+					icon: "xianxinglvhangriji",
+					sort: 2
 				}
 			},
 			{
-				path: "mdEditor",
+				path: "/component/mdEditor",
 				name: "MdEditor",
-				component: () => import("@/views/components/mdEditor/index.vue"),
+				component: "/components/mdEditor/index",
 				meta: {
-					requiresAuth: true,
 					title: "Markdown编辑器",
 					key: "mdEditor",
-					icon: "xianxingdaoyu"
+					icon: "xianxingdaoyu",
+					sort: 3
 				}
 			},
 			{
-				path: "preview",
+				path: "/component/preview",
 				name: "Preview",
-				component: () => import("@/views/components/preview/index.vue"),
+				component: "/components/preview/index",
 				meta: {
-					requiresAuth: true,
 					title: "文件预览",
 					key: "preview",
-					icon: "xianxingfanchuan"
+					icon: "xianxingfanchuan",
+					sort: 4
 				}
 			},
 			{
-				path: "masonry",
+				path: "/component/masonry",
 				name: "Masonry",
-				component: () => import("@/views/components/masonry/index.vue"),
+				component: "/components/masonry/index",
 				meta: {
 					requiresAuth: true,
 					title: "瀑布流布局",
 					key: "masonry",
-					icon: "xianxingzijiayou"
+					icon: "xianxingzijiayou",
+					sort: 5
 				}
 			},
 			{
-				path: "qrCode",
+				path: "/component/qrCode",
 				name: "QrCode",
-				component: () => import("@/views/components/qrCode/index.vue"),
+				component: "/components/qrCode/index",
 				meta: {
-					requiresAuth: true,
 					title: "生成二维码",
 					key: "qrCode",
-					icon: "xianxingtianqiyubao"
+					icon: "xianxingtianqiyubao",
+					sort: 6
 				}
 			},
 			{
-				path: "fragment",
+				path: "/component/fragment",
 				name: "Fragment",
-				component: () => import("@/views/components/fragment/index.vue"),
+				component: "/components/fragment/index",
 				meta: {
 					requiresAuth: true,
 					title: "碎片化图片",
 					key: "fragment",
 					noKeepAlive: true,
-					icon: "xianxingditu"
+					icon: "xianxingditu",
+					sort: 7
 				}
 			},
 			{
-				path: "splitPanel",
+				path: "/component/splitPanel",
 				name: "SplitPanel",
-				component: () => import("@/views/components/splitPanel/index.vue"),
+				component: "/components/splitPanel/index",
 				meta: {
-					requiresAuth: true,
 					title: "分割面板",
 					key: "splitPanel",
-					icon: "xianxingxiarilengyin"
+					icon: "xianxingxiarilengyin",
+					sort: 8
 				}
 			},
 			{
-				path: "draggable",
+				path: "/component/draggable",
 				name: "Draggable",
-				component: () => import("@/views/components/draggable/index.vue"),
+				component: "/components/draggable/index",
 				meta: {
-					requiresAuth: true,
 					title: "拖动面板",
 					key: "draggable",
-					icon: "xianxingzijiayou"
+					icon: "xianxingzijiayou",
+					sort: 9
 				}
 			},
 			{
-				path: "jsonPretty",
+				path: "/component/jsonPretty",
 				name: "JsonPretty",
-				component: () => import("@/views/components/jsonPretty/index.vue"),
+				component: "/components/jsonPretty/index",
 				meta: {
-					requiresAuth: true,
 					title: "JSON美化",
 					key: "jsonPretty",
-					icon: "xianxingyoulun"
+					icon: "xianxingyoulun",
+					sort: 10
 				}
 			}
 		]

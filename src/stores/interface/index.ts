@@ -1,4 +1,4 @@
-import { RouteRecordNormalized } from "vue-router";
+import { CustomRouteRecordRaw } from "@/routers/interface/index";
 
 export interface GlobalStoreType {
 	token: string;
@@ -8,7 +8,9 @@ export interface GlobalStoreType {
 
 export interface appStoreType {
 	isCollapse: boolean;
-	crumbsList: RouteRecordNormalized[];
+	crumbsList: CustomRouteRecordRaw[];
+	menuList: CustomRouteRecordRaw[];
+	addRouterList: CustomRouteRecordRaw[];
 }
 
 // * 语言

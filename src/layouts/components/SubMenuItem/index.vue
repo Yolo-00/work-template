@@ -1,11 +1,10 @@
 <script setup lang="ts" name="SubMenuItem">
-// vue-router
-import { type RouteRecordRaw } from "vue-router";
+import type { CustomRouteRecordRaw } from "@/routers/interface/index";
 import SubMenuItem from "./index.vue";
 
 defineProps({
 	item: {
-		type: Object as () => RouteRecordRaw,
+		type: Object as () => CustomRouteRecordRaw,
 		required: true
 	},
 	basePath: {
@@ -35,7 +34,7 @@ defineProps({
 			v-for="(routeItem, index) in item.children"
 			:key="routeItem.path + index"
 			:item="routeItem"
-			:base-path="basePath + '/' + routeItem.path"
+			:base-path="routeItem.path"
 		/>
 	</el-sub-menu>
 </template>
