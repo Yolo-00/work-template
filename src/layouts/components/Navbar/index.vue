@@ -38,7 +38,7 @@ const handleOut = () => {
 			<!-- 面包屑 -->
 			<el-breadcrumb class="ml-5">
 				<el-breadcrumb-item v-for="(item, index) in crumbsList" :key="index" :to="item.path">
-					{{ item.meta.title }}
+					{{ item.meta?.title }}
 				</el-breadcrumb-item>
 			</el-breadcrumb>
 		</div>
