@@ -18,6 +18,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 				name: "CodeEditor",
 				component: "/components/codeEditor/index",
 				meta: {
+					requiresAuth: true,
 					title: "代码编辑器",
 					key: "codeEditor",
 					icon: "xianxingfeiji",
@@ -40,6 +41,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 				name: "MdEditor",
 				component: "/components/mdEditor/index",
 				meta: {
+					requiresAuth: true,
 					title: "Markdown编辑器",
 					key: "mdEditor",
 					icon: "xianxingdaoyu",

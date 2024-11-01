@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import piniaPersistConfig from "@/configs/piniaPersist";
 import type { GlobalStoreType, LanguageType } from "../../interface";
 import router from "@/routers";
+import { useAppStore } from "../app/index";
 
 // defineStore 调用后返回一个函数，调用该函数获得 Store 实体
 export const useGlobalStore = defineStore({
@@ -32,9 +33,11 @@ export const useGlobalStore = defineStore({
 		},
 		// reset
 		setReset() {
-			this.token = "";
-			this.userInfo = {};
+			const appStore = useAppStore();
+			this.setToken("");
+			this.setUserInfo({});
 			router.replace("/login");
+			appStore.clearRouter();
 		}
 	},
 	// [] 需要持久化的state,不传默认全部持久化

@@ -2,6 +2,8 @@ import { defineStore } from "pinia";
 import piniaPersistConfig from "@/configs/piniaPersist";
 import type { appStoreType } from "../../interface";
 import type { CustomRouteRecordRaw } from "@/routers/interface/index";
+import router from "@/routers";
+import { cloneDeep } from "lodash";
 
 // * 导入所有router
 const metaRouters = import.meta.glob("@/routers/modules/*.ts", { eager: true });
@@ -54,8 +56,17 @@ export const useAppStore = defineStore({
 		// 获取路由表,模拟请求接口获取路由表
 		getRouterArray() {
 			return new Promise(resolve => {
-				resolve(routerArray);
+				// 因为是模拟数据，需要拷贝一下防止数据污染
+				resolve(cloneDeep(routerArray));
 			});
+		},
+		// 清除路由
+		clearRouter() {
+			this.addRouterList.forEach(route => {
+				router.removeRoute(route.name as string);
+			});
+			this.addRouterList = [];
+			this.menuList = [];
 		}
 	},
 	// [] 需要持久化的state,不传默认全部持久化

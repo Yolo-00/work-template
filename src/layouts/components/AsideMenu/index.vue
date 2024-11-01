@@ -29,7 +29,9 @@ const getAllBreadcrumbList = (menuList: CustomRouteRecordRaw[], parent = [], res
 
 const activeMenu = computed(() => {
 	const { path } = route;
-	appStore.setCrumbsList(getAllBreadcrumbList(appStore.menuList)[route.matched[route.matched.length - 1].path]);
+	if (appStore.menuList.length > 0) {
+		appStore.setCrumbsList(getAllBreadcrumbList(appStore.menuList)[route.matched[route.matched.length - 1].path]);
+	}
 	return path;
 });
 </script>

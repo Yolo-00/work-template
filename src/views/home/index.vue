@@ -2,28 +2,28 @@
 // i18n
 import { useI18n } from "vue-i18n";
 import JsxComponent from "./JsxComponent";
-import axios from "axios";
+// import axios from "axios";
 
 const { t } = useI18n();
-let service = axios.create({
-	baseURL: "http://localhost:3000",
-	method: "get"
-});
-service.interceptors.request.use((config: any) => {
-	console.log(config, "请求拦截");
-	return config;
-});
+// let service = axios.create({
+// 	baseURL: "http://localhost:3000",
+// 	method: "get"
+// });
+// service.interceptors.request.use((config: any) => {
+// 	console.log(config, "请求拦截");
+// 	return config;
+// });
 
-service.interceptors.response.use(
-	(response: any) => {
-		console.log(response, "响应拦截");
-		return response;
-	},
-	(error: any) => {
-		console.log(error);
-	}
-);
-service.get("/");
+// service.interceptors.response.use(
+// 	(response: any) => {
+// 		console.log(response, "响应拦截");
+// 		return response;
+// 	},
+// 	(error: any) => {
+// 		console.log(error);
+// 	}
+// );
+// service.get("/");
 
 // fetch("http://localhost:9000/register", {
 // 	method: "post",

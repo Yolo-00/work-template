@@ -1,14 +1,10 @@
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref } from "vue";
 
 const JsxComponent = defineComponent({
 	name: "JsxComponent",
 	setup() {
 		const value = ref(0);
 		const value2 = ref("");
-
-		onMounted(() => {
-			console.log("挂载");
-		});
 		return () => (
 			<div>
 				<ul>

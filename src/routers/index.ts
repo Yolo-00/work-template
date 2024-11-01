@@ -85,30 +85,28 @@ router.beforeEach(async (to, from, next) => {
 	// 2. 判断是否有 Token，没有重定向到 login
 	if (!globalStore.token && to.meta.requiresAuth) return next({ path: "/login", replace: true });
 
-	// 3. 添加路由
+	// 3.判断是访问登陆页，有 Token 就在当前页面，没有 Token 重置路由并放行到登陆页
+	if (to.path === "/login") {
+		if (globalStore.token) return next(from.fullPath);
+		return next();
+	}
+
+	// 4. 添加路由
 	if (!appStore.menuList.length) {
 		await appStore.getMenuList();
 		appStore.addRouterList.forEach(route => {
-			if (!router.hasRoute(route.name as string)) {
-				if (route.meta?.noLayout) {
-					router.addRoute(route as RouteRecordRaw);
-				} else {
-					router.addRoute("layout", route as RouteRecordRaw);
-				}
+			if (route.meta?.noLayout) {
+				router.addRoute(route as RouteRecordRaw);
+			} else {
+				router.addRoute("layout", route as RouteRecordRaw);
 			}
 		});
 		return next({ path: to.redirectedFrom?.path, replace: true });
 	}
 
-	// 4.动态设置标题
+	// 5.动态设置标题
 	const title = import.meta.env.VITE_APP_TITLE;
 	document.title = to.meta.title ? `${to.meta.title} - ${title}` : title;
-
-	// 5.判断是访问登陆页，有 Token 就在当前页面，没有 Token 重置路由并放行到登陆页
-	if (to.path === "/login") {
-		if (globalStore.token) return next(from.fullPath);
-		return next();
-	}
 
 	// 6.正常访问页面
 	next();
