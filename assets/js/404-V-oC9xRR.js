@@ -1,1 +1,0 @@
-import{_ as e}from"./index-D0tp8chl.js";import{h as r,i as c}from"./vendor-CaemYICl.js";const o={};function t(n,_){return r(),c("div",null,"404")}const f=e(o,[["render",t]]);export{f as default};
