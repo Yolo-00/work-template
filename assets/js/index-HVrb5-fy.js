@@ -1,0 +1,1 @@
+import{e as t,a5 as r,h as l,i as s,j as u,r as p}from"./vendor-Cx30SBEr.js";const m=t({__name:"index",setup(d){const e=r("");return(i,n)=>{const a=p("WangEditor");return l(),s("div",null,[u(a,{value:e.value,"onUpdate:value":n[0]||(n[0]=o=>e.value=o)},null,8,["value"])])}}});export{m as default};

@@ -1,1 +1,0 @@
-import{e as t,a3 as l,h as n,i as r,j as u,u as s,ao as d}from"./vendor-CaemYICl.js";const c=t({__name:"index",setup(i){const e=l("# Hello Editor");return(m,o)=>(n(),r("div",null,[u(s(d),{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=a=>e.value=a),"input-box-witdh":"60%"},null,8,["modelValue"])]))}});export{c as default};
