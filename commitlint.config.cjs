@@ -22,14 +22,12 @@ module.exports = {
 				"refactor",
 				"perf",
 				"test",
-				"build",
 				"ci",
 				"chore",
 				"revert",
 				"wip",
 				"workflow",
 				"types",
-				"release"
 			]
 		]
 	}
