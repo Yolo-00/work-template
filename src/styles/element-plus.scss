@@ -3,6 +3,7 @@
 	--elSubMenu-item-hover-color: #f6f0ad;
 	--elMenu-item-hover-color: #f6f0ad;
 	--el-menu-active-color: #8400ff;
+	--el-menu-hover-text-color: #8400ff;
 }
 
 .el-header {
@@ -22,11 +23,13 @@
 	.el-menu-item {
 		&:hover {
 			background-color: var(--elMenu-item-hover-color) !important;
+			color: var(--el-menu-hover-text-color) !important;
 		}
 	}
 	.el-sub-menu .el-sub-menu__title {
 		&:hover {
 			background-color: var(--elSubMenu-item-hover-color) !important;
+			color: var(--el-menu-hover-text-color) !important;
 		}
 	}
 }

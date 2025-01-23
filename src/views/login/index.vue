@@ -79,9 +79,9 @@ const getGithubCallBack = (event: any) => {
 	if (code && state) {
 		globalStore.setToken(code || "");
 		router.replace("/");
-		// 移除事件监听
-		window.removeEventListener("message", getGithubCallBack);
 	}
+	// 移除事件监听
+	window.removeEventListener("message", getGithubCallBack);
 };
 onBeforeMount(() => {
 	const urlParams = new URLSearchParams(location.search);

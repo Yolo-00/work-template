@@ -40,6 +40,7 @@
 - 滑块验证组件（基于 [**vue3-puzzle-vcode**](https://www.npmjs.com/package/vue3-puzzle-vcode)））
 - 碎片化图片
 - 无缝衔接滚动组件
+- 虚拟表格组件
 
 ### 安装使用步骤 📔
 

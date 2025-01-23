@@ -127,6 +127,17 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					icon: "xianxingyoulun",
 					sort: 10
 				}
+			},
+			{
+				path: "/component/virtualTable",
+				name: "virtualTable",
+				component: "/components/virtualTable/index",
+				meta: {
+					title: "虚拟表格",
+					key: "virtualTable",
+					icon: "xianxingzijiayou",
+					sort: 11
+				}
 			}
 		]
 	}
