@@ -1,1 +1,0 @@
-import{u as t}from"./index-CmeN4ss_.js";import{a7 as u}from"./vendor-DH3m-RmB.js";function g(){const a=t(),{locale:o}=u();return{setLanguage:e=>{e!=a.language&&(a.setLanguage(e),o.value=e)}}}export{g as u};
