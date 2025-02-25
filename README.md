@@ -1,5 +1,5 @@
 <div align="center">
-<h1>work-template</h1>
+<h1>work-template 精简版</h1>
 
 ![GitHub license](https://img.shields.io/github/license/Yolo-00/work-template?style=flat)
 ![GitHub stars](https://img.shields.io/github/stars/Yolo-00/work-template?color=fa6470&style=flat)
@@ -26,22 +26,6 @@
 - 使用 Prettier 统一格式化代码，集成 Eslint 代码校验规范
 - 打包优化（配置 Gzip 打包、分包策略、CDN 引入……）
 
-### 内置组件 📚
-
-- 代码编辑器（基于 [**monaco-editor**](https://github.com/microsoft/monaco-editor)）
-- 富文本编辑器（基于 [**wangeditor**](https://github.com/wangeditor-team/wangEditor)）
-- Markdown编辑器（基于 [**md-editor-v3**](https://github.com/imzbf/md-editor-v3)）
-- 瀑布流布局（基于 [**masonry-layout**](https://github.com/desandro/masonry)）
-- 各类文件预览，兼容：`Docx`、`Excel`、`PDF`、`img`
-- 生成二维码（基于 [**qrcode**](https://github.com/soldair/node-qrcode)）
-- 分割面板（基于 [**splitpanes**](https://github.com/antoniandre/splitpanes)）
-- 拖拽排序（基于 [**vuedraggable**](https://github.com/SortableJS/Vue.Draggable)））
-- Lottie组件（基于 [**lottie-web**](https://github.com/airbnb/lottie-web)））
-- 滑块验证组件（基于 [**vue3-puzzle-vcode**](https://www.npmjs.com/package/vue3-puzzle-vcode)））
-- 碎片化图片
-- 无缝衔接滚动组件
-- 虚拟表格组件
-
 ### 安装使用步骤 📔
 
 - **Clone：**
@@ -57,7 +41,7 @@ git clone https://github.com/Yolo-00/work-template.git
 - **Install：**
 
 ```bash
-yarn install
+pnpm install
 
 # yarn install 安装失败，请升级 nodejs 到 18 以上
 ```
@@ -65,20 +49,20 @@ yarn install
 - **Run：**
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 - **Build：**
 
 ```bash
 # 开发环境
-yarn build:dev
+pnpm build:dev
 
 # 测试环境
-yarn build:test
+pnpm build:test
 
 # 生产环境
-yarn build:prod
+pnpm build:prod
 ```
 
 ## 如何贡献
