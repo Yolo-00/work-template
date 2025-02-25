@@ -3,7 +3,7 @@
 import { Moon, Sunny } from "@element-plus/icons-vue";
 // hooks
 import useLanguage from "@/hooks/useLanguage";
-import { useDark, useToggle, useFullscreen } from "@vueuse/core";
+import { useDark, useToggle } from "@vueuse/core";
 // image
 import Avatar from "@/assets/images/avatar.png";
 // pinia
@@ -12,7 +12,6 @@ import { useAppStore } from "@/stores/modules/app";
 // Vue
 import { computed } from "vue";
 
-const { isFullscreen, toggle } = useFullscreen();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const { setLanguage } = useLanguage();
@@ -60,14 +59,6 @@ const handleOut = () => {
 						</el-dropdown-menu>
 					</template>
 				</el-dropdown>
-			</div>
-			<!-- 全屏 -->
-			<div mr-4 cursor-pointer max-md:hidden>
-				<SvgIcon
-					:icon-style="{ width: '20px', height: '20px' }"
-					:name="isFullscreen ? 'fullscreen-exit' : 'fullscreen'"
-					@click="toggle"
-				/>
 			</div>
 			<!-- 主题 -->
 			<div mr-4>

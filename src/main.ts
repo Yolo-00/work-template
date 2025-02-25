@@ -12,7 +12,6 @@ import "element-plus/dist/index.css";
 import "@/styles/app.scss";
 import "virtual:uno.css";
 import "virtual:svg-icons-register";
-import "animate.css";
 
 const app = createApp(App);
 
