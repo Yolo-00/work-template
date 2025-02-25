@@ -71,7 +71,8 @@
 		"vue-pdf-embed": "^2.0.2",
 		"vue-router": "^4.3.2",
 		"vue3-puzzle-vcode": "^1.1.7",
-		"vuedraggable": "^4.1.0"
+		"vuedraggable": "^4.1.0",
+		"vxe-table": "^4.11.11"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "19.2.2",

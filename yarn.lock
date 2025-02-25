@@ -2827,6 +2827,14 @@
   dependencies:
     vue-demi "*"
 
+"@vxe-ui/core@^4.0.33":
+  version "4.0.33"
+  resolved "https://registry.npmmirror.com/@vxe-ui/core/-/core-4.0.33.tgz#981408b771fd0b09b3678a5740b66f62eeaea6dd"
+  integrity sha512-TZS4CuIQ60Q5hmaglKP2+BC5/4Gc9exnRt5rMhDx9hY2f7DUMOpnfeVV70cevN0Ik+2T8hw38SP7sfNGUCmwgA==
+  dependencies:
+    dom-zindex "^1.0.6"
+    xe-utils "^3.7.2"
+
 "@wangeditor/basic-modules@^1.1.7":
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/@wangeditor/basic-modules/-/basic-modules-1.1.7.tgz#a9c3ccf4ef53332f29550d59d3676e15f395946f"
@@ -3884,6 +3892,11 @@ dom-serializer@^1.0.1:
     domelementtype "^2.0.1"
     domhandler "^4.2.0"
     entities "^2.0.0"
+
+dom-zindex@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/dom-zindex/-/dom-zindex-1.0.6.tgz#0f911b39d3e542232ad91307638dbb869643f89e"
+  integrity sha512-FKWIhiU96bi3xpP9ewRMgANsoVmMUBnMnmpCT6dPMZOunVYJQmJhSRruoI0XSPoHeIif3kyEuiHbFrOJwEJaEA==
 
 dom7@^3.0.0:
   version "3.0.0"
@@ -7921,6 +7934,20 @@ vuedraggable@^4.1.0:
   dependencies:
     sortablejs "1.14.0"
 
+vxe-pc-ui@^4.3.95:
+  version "4.3.95"
+  resolved "https://registry.npmmirror.com/vxe-pc-ui/-/vxe-pc-ui-4.3.95.tgz#e99a60a7c4331ee6fc24e34f538645fdf7601b28"
+  integrity sha512-y4N8orfWlToMclonpFrGkwdM4qtDK8wVT6hN2T//pJp5JyTgKRdmVslSR1oFtpJxJ/hmWjlF01ffGrYdMr11QA==
+  dependencies:
+    "@vxe-ui/core" "^4.0.33"
+
+vxe-table@^4.11.11:
+  version "4.11.11"
+  resolved "https://registry.npmmirror.com/vxe-table/-/vxe-table-4.11.11.tgz#7cf009db948731052863cc7d512714b965282560"
+  integrity sha512-+PrUuJ7MeO9LottiSukf4ILxog6PhklqiwPQjh2xhFXo6m0W5cMVPkwYLX5rYibD8Ckum30r27iTUyPbQ/18fA==
+  dependencies:
+    vxe-pc-ui "^4.3.95"
+
 w3c-keyname@^2.2.4:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/w3c-keyname/-/w3c-keyname-2.2.8.tgz#7b17c8c6883d4e8b86ac8aba79d39e880f8869c5"
@@ -8013,6 +8040,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+
+xe-utils@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.npmmirror.com/xe-utils/-/xe-utils-3.7.2.tgz#272b799c985c9b86b1b7352ef690ada247270c56"
+  integrity sha512-kZ/CpQFiyYCHlMxYuHxzH2wzyRqlEaKx8vFpCA0J4YIkfEVphc6uaOTuAYT5jsCnjnPjwPf/Gtsl0A6tbnCsAA==
 
 xml-name-validator@^4.0.0:
   version "4.0.0"
