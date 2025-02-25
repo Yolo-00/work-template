@@ -1,1 +1,0 @@
-import{e as a,a7 as n,h as s,i as t,v as o,W as r,u as c}from"./vendor-DH3m-RmB.js";const p=a({__name:"index",setup(i){const{t:e}=n();return(l,u)=>(s(),t("div",null,[o("div",null,r(c(e)("home.home")),1)]))}});export{p as default};
