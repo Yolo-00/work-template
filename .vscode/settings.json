@@ -107,7 +107,7 @@
 		"unplugin",
 		"unref",
 		"vite",
-		"vuedraggable",
+		"vue-draggable-plus",
 		"vueuse",
 		"Vuex",
 		"wangeditor",

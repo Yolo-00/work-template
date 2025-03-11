@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import draggable from "vuedraggable";
+import { VueDraggable } from "vue-draggable-plus";
+import VueJsonPretty from "vue-json-pretty";
+import "vue-json-pretty/lib/styles.css";
 import { ref } from "vue";
 
 const list = ref([
@@ -16,10 +18,11 @@ const list = ref([
 		name: "王五"
 	},
 	{
-		id: 3,
-		name: "aaa"
+		id: 4,
+		name: "赵六"
 	}
 ]);
+
 const dragging = ref(false);
 const dragIndex = ref(0);
 const dragData = ref("");
@@ -75,13 +78,15 @@ const onTouchEnd = () => {
 
 <template>
 	<div>
-		<draggable v-model="list" item-key="id" class="max-md:hidden">
-			<template #item="{ element }">
-				<el-card class="mt-5">
+		<div class="max-md:hidden flex items-start justify-between">
+			<VueDraggable v-model="list" ghost-class="ghost" :animation="300" class="w-2/5">
+				<div class="mt-5 cursor-move p-5 rounded bg-[#f9f4e7]" v-for="element in list" :key="element.id">
 					<div>{{ element.name }}</div>
-				</el-card>
-			</template>
-		</draggable>
+				</div>
+			</VueDraggable>
+			<vue-json-pretty class="w-2/5" :data="list" />
+		</div>
+
 		<div class="w-80 grid grid-cols-3 bg-gray-300 p-5 gap-5 md:hidden">
 			<div
 				v-for="(item, index) in list"
@@ -100,4 +105,9 @@ const onTouchEnd = () => {
 	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.ghost {
+	opacity: 0.5;
+	background: #7963f9;
+}
+</style>
