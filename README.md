@@ -35,9 +35,9 @@
 - 各类文件预览，兼容：`Docx`、`Excel`、`PDF`、`img`
 - 生成二维码（基于 [**qrcode**](https://github.com/soldair/node-qrcode)）
 - 分割面板（基于 [**splitpanes**](https://github.com/antoniandre/splitpanes)）
-- 拖拽排序（基于 [**vue-draggable-plus**](https://github.com/SortableJS/Vue.Draggable)））
-- Lottie组件（基于 [**lottie-web**](https://github.com/airbnb/lottie-web)））
-- 滑块验证组件（基于 [**vue3-puzzle-vcode**](https://www.npmjs.com/package/vue3-puzzle-vcode)））
+- 拖拽排序（基于 [**vue-draggable-plus**](https://github.com/Alfred-Skyblue/vue-draggable-plus)）
+- Lottie组件（基于 [**lottie-web**](https://github.com/airbnb/lottie-web)）
+- 滑块验证组件（基于 [**vue3-puzzle-vcode**](https://www.npmjs.com/package/vue3-puzzle-vcode)）
 - 碎片化图片
 - 无缝衔接滚动组件
 - 虚拟表格组件
