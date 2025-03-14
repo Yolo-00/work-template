@@ -7,6 +7,7 @@ const menuRouter: Array<CustomRouteRecordRaw> = [
 		name: "Menu",
 		meta: {
 			title: "菜单嵌套",
+			localeKey: "router.menu.module",
 			key: "menu",
 			icon: "xianxingfeiji",
 			sort: 4
@@ -19,6 +20,7 @@ const menuRouter: Array<CustomRouteRecordRaw> = [
 				component: "/menu/menu-1/index",
 				meta: {
 					title: "菜单-1",
+					localeKey: "router.menu.menu1",
 					key: "menu-1",
 					icon: "xianxingfeiji",
 					sort: 1
@@ -29,6 +31,7 @@ const menuRouter: Array<CustomRouteRecordRaw> = [
 				name: "Menu-2",
 				meta: {
 					title: "菜单-2",
+					localeKey: "router.menu.menu2",
 					key: "menu-2",
 					icon: "xianxingfeiji",
 					sort: 2
@@ -41,6 +44,7 @@ const menuRouter: Array<CustomRouteRecordRaw> = [
 						component: "/menu/menu-2/menu-2-1/index",
 						meta: {
 							title: "菜单-2-1",
+							localeKey: "router.menu.menu2_1",
 							key: "menu-2-1",
 							icon: "xianxingfeiji",
 							sort: 1
@@ -52,6 +56,7 @@ const menuRouter: Array<CustomRouteRecordRaw> = [
 						component: "/menu/menu-2/menu-2-2/index",
 						meta: {
 							title: "菜单-2-2",
+							localeKey: "router.menu.menu2_2",
 							key: "menu-2-2",
 							icon: "xianxingfeiji",
 							sort: 2

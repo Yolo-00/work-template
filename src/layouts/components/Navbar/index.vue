@@ -11,7 +11,10 @@ import { useGlobalStore } from "@/stores/modules/user";
 import { useAppStore } from "@/stores/modules/app";
 // Vue
 import { computed } from "vue";
+// vue-i18n
+import { useI18n } from "vue-i18n";
 
+const { t } = useI18n();
 const { isFullscreen, toggle } = useFullscreen();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -38,7 +41,7 @@ const handleOut = () => {
 			<!-- 面包屑 -->
 			<el-breadcrumb class="ml-5">
 				<el-breadcrumb-item v-for="(item, index) in crumbsList" :key="index" :to="item.path">
-					{{ item.meta?.title }}
+					{{ t(item.meta?.localeKey as string) }}
 				</el-breadcrumb-item>
 			</el-breadcrumb>
 		</div>
@@ -79,7 +82,7 @@ const handleOut = () => {
 				<template #dropdown>
 					<el-dropdown-menu>
 						<el-dropdown-item>
-							<div @click="handleOut">退出</div>
+							<div @click="handleOut">{{ t("layout.exit") }}</div>
 						</el-dropdown-item>
 					</el-dropdown-menu>
 				</template>

@@ -9,6 +9,7 @@ const dataScreenRouter: Array<CustomRouteRecordRaw> = [
 		meta: {
 			noLayout: true,
 			title: "数据大屏",
+			localeKey: "router.dataScreen",
 			key: "dataScreen",
 			icon: "xianxingxiarilengyin",
 			sort: 2

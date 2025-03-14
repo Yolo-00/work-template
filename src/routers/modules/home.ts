@@ -7,8 +7,8 @@ const homeRouter: Array<CustomRouteRecordRaw> = [
 		name: "Home",
 		component: "/home/index",
 		meta: {
-			requiresAuth: true,
 			title: "首页",
+			localeKey: "router.home",
 			key: "home",
 			icon: "xianxingxiarilengyin",
 			sort: 1
