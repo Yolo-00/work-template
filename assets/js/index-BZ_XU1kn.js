@@ -1,1 +1,0 @@
-import{e as a,a8 as n,j as s,h as t,v as o,X as r,u as c}from"./vendor-CRdWSz2o.js";const p=a({__name:"index",setup(l){const{t:e}=n();return(u,i)=>(s(),t("div",null,[o("div",null,r(c(e)("home.home")),1)]))}});export{p as default};
