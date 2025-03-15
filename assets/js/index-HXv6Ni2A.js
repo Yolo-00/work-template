@@ -1,1 +1,0 @@
-import{e as n,P as a,j as s,h as t,v as o,Y as r,u as c}from"./vendor-C2_MARnq.js";const p=n({__name:"index",setup(l){const{t:e}=a();return(u,i)=>(s(),t("div",null,[o("div",null,r(c(e)("home.home")),1)]))}});export{p as default};
