@@ -27,7 +27,8 @@ export default {
 			splitPanel: "Split Panel",
 			draggable: "Draggable Panel",
 			jsonPretty: "JSON Prettifier",
-			virtualTable: "Virtual Table"
+			virtualTable: "Virtual Table",
+			coverImageAdjuster: "Cover Image Adjuster"
 		},
 		menu: {
 			module: "Nested Menu",

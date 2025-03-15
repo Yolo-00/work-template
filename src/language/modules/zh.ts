@@ -27,7 +27,8 @@ export default {
 			splitPanel: "分割面板",
 			draggable: "拖动面板",
 			jsonPretty: "JSON美化",
-			virtualTable: "虚拟表格"
+			virtualTable: "虚拟表格",
+			coverImageAdjuster: "图片封面位置调整组件"
 		},
 		menu: {
 			module: "菜单嵌套",

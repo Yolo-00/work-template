@@ -146,6 +146,18 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					icon: "xianxingzijiayou",
 					sort: 11
 				}
+			},
+			{
+				path: "/component/coverImageAdjuster",
+				name: "coverImageAdjuster",
+				component: "/components/coverImageAdjuster/index",
+				meta: {
+					title: "图片封面位置调整组件",
+					localeKey: "router.component.coverImageAdjuster",
+					key: "coverImageAdjuster",
+					icon: "xianxingditu",
+					sort: 11
+				}
 			}
 		]
 	}
