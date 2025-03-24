@@ -87,6 +87,14 @@ const onTouchEnd = () => {
 			<vue-json-pretty class="w-2/5" :data="list" />
 		</div>
 
+		<div class="max-md:hidden">
+			<VueDraggable v-model="list" ghost-class="ghost" :animation="300" class="grid grid-cols-2 gap-4">
+				<div class="mt-5 cursor-move p-5 rounded bg-[#f6f0ad]" v-for="element in list" :key="element.id">
+					<div>{{ element.name }}</div>
+				</div>
+			</VueDraggable>
+		</div>
+
 		<div class="w-80 grid grid-cols-3 bg-gray-300 p-5 gap-5 md:hidden">
 			<div
 				v-for="(item, index) in list"
