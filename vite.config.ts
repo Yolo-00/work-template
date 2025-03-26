@@ -14,6 +14,7 @@ import { viteServeInfoPlugin } from "./vite/plugin/vite-serve-info";
 import { cdn } from "./vite/plugin/cdn";
 import VueDevTools from "vite-plugin-vue-devtools";
 import { name, version } from "./vite/plugin/app-info";
+import cesium from "vite-plugin-cesium";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -68,7 +69,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			viteEnv.VITE_CDN && cdn,
 			UnoCSS(),
 			viteServeInfoPlugin(),
-			mode === "development" && VueDevTools()
+			mode === "development" && VueDevTools(),
+			cesium()
 		],
 		css: {
 			// * postcss后处理器
