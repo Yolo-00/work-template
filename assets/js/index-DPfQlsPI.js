@@ -1,1 +1,0 @@
-import{e as t,a7 as l,j as n,h as u,i as r,u as s,au as d}from"./vendor-BAJA0oMh.js";const c=t({__name:"index",setup(i){const e=l("# Hello Editor");return(m,a)=>(n(),u("div",null,[r(s(d),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o),"input-box-witdh":"60%"},null,8,["modelValue"])]))}});export{c as default};
