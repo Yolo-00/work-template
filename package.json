@@ -67,6 +67,7 @@
 		"unocss": "^0.59.4",
 		"version-rocket": "^1.7.1",
 		"vue": "^3.4.23",
+		"vue-cesium": "^3.2.9",
 		"vue-demi": "^0.14.6",
 		"vue-draggable-plus": "^0.6.0",
 		"vue-i18n": "^9.13.0",
