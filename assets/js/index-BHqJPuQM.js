@@ -1,0 +1,1 @@
+import{e as t,a8 as r,r as l,j as s,h as u,i as p}from"./vendor-9Av3Cne1.js";const m=t({__name:"index",setup(d){const e=r("");return(i,n)=>{const a=l("WangEditor");return s(),u("div",null,[p(a,{value:e.value,"onUpdate:value":n[0]||(n[0]=o=>e.value=o)},null,8,["value"])])}}});export{m as default};
