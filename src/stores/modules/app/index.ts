@@ -11,7 +11,6 @@ const metaRouters = import.meta.glob("@/routers/modules/*.ts", { eager: true });
 const viewsModules = import.meta.glob("@/views/**/*.vue");
 // * 处理路由表
 export const routerArray: CustomRouteRecordRaw[] = [];
-
 Object.keys(metaRouters).forEach(item => {
 	Object.keys(metaRouters[item] as object).forEach(key => {
 		routerArray.push(...(metaRouters[item] as any)[key]);
@@ -47,11 +46,7 @@ export const useAppStore = defineStore({
 		async getMenuList() {
 			const routerList = await this.getRouterArray();
 			this.menuList = getChangeMenuList(routerList as CustomRouteRecordRaw[]);
-			this.setAddRouterList(this.menuList);
-		},
-		// set 添加路由菜单
-		setAddRouterList(menuList: CustomRouteRecordRaw[]) {
-			this.addRouterList = getChangeRouterList(menuList);
+			this.addRouterList = getChangeRouterList(routerList as CustomRouteRecordRaw[]);
 		},
 		// 获取路由表,模拟请求接口获取路由表
 		getRouterArray() {
