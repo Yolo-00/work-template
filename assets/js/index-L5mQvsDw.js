@@ -1,0 +1,1 @@
+import{e as t,aa as l,j as n,h as r,i as u,u as s,av as d}from"./vendor-DzbK7Vmk.js";const c=t({__name:"index",setup(i){const e=l("# Hello Editor");return(m,a)=>(n(),r("div",null,[u(s(d),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o),"input-box-witdh":"60%"},null,8,["modelValue"])]))}});export{c as default};
