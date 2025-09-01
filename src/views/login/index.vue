@@ -15,7 +15,7 @@ import { useGlobalStore } from "@/stores/modules/user";
 // i18n
 import { useI18n } from "vue-i18n";
 // router
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 // utils
 import { debounce } from "lodash";
 // components
@@ -23,6 +23,7 @@ import PuzzleVerify from "@/components/PuzzleVerify/index";
 // api
 // import { loginApi } from "@/api/modules/login";
 
+const route = useRoute();
 const router = useRouter();
 const { setLanguage } = useLanguage();
 const { t } = useI18n();
@@ -43,7 +44,10 @@ const handleLogin = debounce(() => {
 		if (!res) return;
 		puzzleVerifyRef.value.open(() => {
 			globalStore.setToken(new Date().getTime().toString());
-			router.replace("/");
+			router.replace({
+				path: "/",
+				query: route.query
+			});
 			// loginApi({
 			// 	loginName: formData.account,
 			// 	password: formData.password

@@ -22,6 +22,6 @@ const route = useRoute();
 
 <style lang="scss" scoped>
 :deep(.el-menu--horizontal) {
-	--el-menu-horizontal-height: 50px;
+	--el-menu-horizontal-height: 60px;
 }
 </style>

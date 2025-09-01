@@ -8,12 +8,12 @@ import { useAppStore } from "@/stores/modules/app";
  *
  * meta : {
 	hidden: true                    // 当设置 true 的时候该路由不会在侧边栏出现 如401,login等页面,默认false
-    requiresAuth: true              // 如果设置为true，表示此页面需要用户认证,默认false
-    title: 'title'                  // 设置该路由在侧边栏和面包屑中展示的名字
+	requiresAuth: true              // 如果设置为true，表示此页面需要用户认证,默认false
+	title: 'title'                  // 设置该路由在侧边栏和面包屑中展示的名字
 	localeKey: 'home'               // 设置该页面的国际化名称
-    key: 'home'                		// 用于唯一标识此页面的键值
-    noKeepAlive: true               // 如果设置为true，表明此页面组件不需要被缓存
-    icon: 'xianxingditu'      		// 置页面的图标为“xianxingditu”
+	key: 'home'                		// 用于唯一标识此页面的键值
+	noKeepAlive: true               // 如果设置为true，表明此页面组件不需要被缓存
+	icon: 'xianxingditu'      		// 置页面的图标为“xianxingditu”
 	noLayout: true 					// 如果设置为true,表示此页面不需要layout布局,默认为false
 	sort: 1                          // 菜单排序，越大越靠后
   }
@@ -36,7 +36,21 @@ const routers: RouteRecordRaw[] = [
 		},
 		component: () => import("@/layouts/index.vue"),
 		redirect: "/home",
-		children: []
+		children: [
+			{
+				path: "/home",
+				name: "Home",
+				component: () => import("@/views/home/index.vue"),
+				meta: {
+					title: "首页",
+					localeKey: "router.home",
+					requiresAuth: true,
+					key: "home",
+					icon: "xianxingxiarilengyin",
+					sort: 1
+				}
+			}
+		]
 	},
 	{
 		path: "/login",
@@ -78,6 +92,7 @@ const router = createRouter({
  * @description 路由拦截 beforeEach
  * */
 router.beforeEach(async (to, from, next) => {
+	console.log(to, "路由跳转");
 	const globalStore = useGlobalStore();
 	const appStore = useAppStore();
 
@@ -85,7 +100,7 @@ router.beforeEach(async (to, from, next) => {
 	NProgress.start();
 
 	// 2. 判断是否有 Token，没有重定向到 login
-	if (!globalStore.token && to.meta.requiresAuth) return next({ path: "/login", replace: true });
+	if (!globalStore.token && to.meta.requiresAuth) return next({ path: "/login", query: to.query, replace: true });
 
 	// 3.判断是访问登陆页，有 Token 就在当前页面，没有 Token 重置路由并放行到登陆页
 	if (to.path === "/login") {
@@ -103,7 +118,7 @@ router.beforeEach(async (to, from, next) => {
 				router.addRoute("layout", route as RouteRecordRaw);
 			}
 		});
-		return next({ path: to.redirectedFrom?.path, replace: true });
+		return next();
 	}
 
 	// 5.动态设置标题

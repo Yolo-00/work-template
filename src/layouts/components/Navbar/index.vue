@@ -23,7 +23,7 @@ const globalStore = useGlobalStore();
 const appStore = useAppStore();
 
 // 面包屑
-const crumbsList = computed(() => appStore.crumbsList.filter(item => item.path !== "/"));
+const crumbsList = computed(() => appStore.crumbsList?.filter(item => item.path !== "/"));
 
 // 退出登录
 const handleOut = () => {
