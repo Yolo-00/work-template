@@ -2,12 +2,28 @@
 import Navbar from "./components/Navbar/index.vue";
 import AsideMenu from "./components/AsideMenu/index.vue";
 // vue
-import { computed } from "vue";
+import { computed, reactive, watch } from "vue";
 // vue-router
 import { useRouter } from "vue-router";
+// hook
+import { useDark } from "@vueuse/core";
 
+const isDark = useDark();
 const router = useRouter();
 
+const font = reactive({
+	color: "rgba(0, 0, 0, .15)"
+});
+
+watch(
+	isDark,
+	() => {
+		font.color = isDark.value ? "rgba(255, 255, 255, .15)" : "rgba(0, 0, 0, .15)";
+	},
+	{
+		immediate: true
+	}
+);
 const routerInclude = computed<string[]>(() => {
 	const list = router
 		.getRoutes()
@@ -18,7 +34,7 @@ const routerInclude = computed<string[]>(() => {
 </script>
 
 <template>
-	<el-watermark content="Yolo">
+	<el-watermark content="Yolo" :font="font">
 		<el-container class="h-100vh">
 			<AsideMenu />
 			<el-container>
