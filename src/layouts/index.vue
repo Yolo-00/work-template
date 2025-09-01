@@ -18,7 +18,7 @@ const routerInclude = computed<string[]>(() => {
 </script>
 
 <template>
-	<div>
+	<el-watermark content="Yolo">
 		<el-container class="h-100vh">
 			<AsideMenu />
 			<el-container>
@@ -44,7 +44,7 @@ const routerInclude = computed<string[]>(() => {
 		<el-backtop target=".el-main .el-scrollbar__wrap" :bottom="80" :right="66">
 			<SvgIcon color="#409eff" :icon-style="{ width: '25px', height: '25px' }" name="backtop" />
 		</el-backtop>
-	</div>
+	</el-watermark>
 </template>
 
 <style lang="scss" scoped></style>

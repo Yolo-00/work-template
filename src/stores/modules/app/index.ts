@@ -45,7 +45,20 @@ export const useAppStore = defineStore({
 		// set菜单列表
 		async getMenuList() {
 			const routerList = await this.getRouterArray();
-			this.menuList = getChangeMenuList(routerList as CustomRouteRecordRaw[]);
+			this.menuList = [
+				{
+					path: "/home",
+					name: "Home",
+					meta: {
+						title: "首页",
+						localeKey: "router.home",
+						key: "home",
+						icon: "xianxingxiarilengyin",
+						sort: 1
+					}
+				},
+				...getChangeMenuList(routerList as CustomRouteRecordRaw[])
+			];
 			this.addRouterList = getChangeRouterList(routerList as CustomRouteRecordRaw[]);
 		},
 		// 获取路由表,模拟请求接口获取路由表
