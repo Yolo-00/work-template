@@ -1,1 +1,0 @@
-import t from"./index-Di2PKFbm.js";import{e as o,j as a,h as r,i as n,w as l,v as s}from"./vendor-OB9N_iEr.js";import"./index-Cg0e3tdf.js";const c=o({__name:"index",setup(d){return(i,e)=>(a(),r("div",null,[n(t,null,{default:l(()=>e[0]||(e[0]=[s("h1",null,"hello world",-1)])),_:1})]))}});export{c as default};
