@@ -23,9 +23,9 @@ const routerInclude = computed<string[]>(() => {
 			<AsideMenu />
 			<el-container>
 				<el-header><Navbar /></el-header>
-				<el-main class="bg-gray-100 dark-bg-black h-[calc(100vh-60px)]">
+				<el-main class="bg-gray-100 dark:bg-black">
 					<el-scrollbar class="h-[calc(100vh-140px)]">
-						<div class="dark:bg-[var(--theme-bg)]" p-5 bg-white rounded-lg>
+						<div class="dark:bg-[var(--theme-bg)] min-h-[calc(100vh-140px)]" p-5 bg-white rounded-lg>
 							<!-- 子路由 -->
 							<router-view v-slot="{ Component, route }">
 								<transition name="slide-fade">
@@ -37,7 +37,7 @@ const routerInclude = computed<string[]>(() => {
 						</div>
 					</el-scrollbar>
 				</el-main>
-				<el-footer class="bg-white h-10 rounded-md flex items-center justify-center">Footer</el-footer>
+				<el-footer class="bg-white !dark:bg-[var(--theme-bg)] h-10 flex items-center justify-center">Footer</el-footer>
 			</el-container>
 		</el-container>
 
