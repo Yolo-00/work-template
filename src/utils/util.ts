@@ -9,7 +9,7 @@ export function localGet(key: string) {
 	const value = window.localStorage.getItem(key);
 	try {
 		return JSON.parse(window.localStorage.getItem(key) as string);
-	} catch (error) {
+	} catch {
 		return value;
 	}
 }
@@ -74,10 +74,10 @@ export function generateUUID() {
 	return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
 		let random = Math.random() * 16;
 		if (timestamp > 0) {
-			random = (timestamp + random) % 16 | 0;
+			random = ((timestamp + random) % 16) | 0;
 			timestamp = Math.floor(timestamp / 16);
 		} else {
-			random = (performanceNow + random) % 16 | 0;
+			random = ((performanceNow + random) % 16) | 0;
 			performanceNow = Math.floor(performanceNow / 16);
 		}
 		return (c === "x" ? random : (random & 0x3) | 0x8).toString(16);

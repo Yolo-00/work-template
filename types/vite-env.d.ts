@@ -8,6 +8,17 @@ declare interface Navigator {
 declare module "nprogress";
 declare module "qs";
 
+declare module "@vue-office/docx/lib/v3/index.js" {
+	import type { Component } from "vue";
+	const VueOfficeDocx: Component;
+	export default VueOfficeDocx;
+}
+declare module "@vue-office/excel/lib/v3/index.js" {
+	import type { Component } from "vue";
+	const VueOfficeExcel: Component;
+	export default VueOfficeExcel;
+}
+
 // * Vite
 declare type Recordable<T = any> = Record<string, T>;
 
@@ -18,7 +29,6 @@ declare interface ImportMetaEnv {
 	readonly VITE_APP_TITLE: string;
 	readonly VITE_REPORT: boolean;
 	readonly VITE_IMG_URL: string;
-	readonly VITE_CDN: boolean;
 	readonly VITE_HASH: boolean;
 }
 

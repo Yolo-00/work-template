@@ -14,19 +14,6 @@ const dataScreenRouter: Array<CustomRouteRecordRaw> = [
 			icon: "xianxingxiarilengyin",
 			sort: 2
 		}
-	},
-	{
-		path: "/cesiumContainer",
-		name: "CesiumContainer",
-		component: "/dataScreen/cesiumContainer/index",
-		meta: {
-			hidden: true,
-			noLayout: true,
-			title: "Cesium",
-			key: "CesiumContainer",
-			icon: "xianxingxiarilengyin",
-			sort: 3
-		}
 	}
 ];
 

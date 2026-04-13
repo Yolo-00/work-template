@@ -11,10 +11,8 @@ import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import postcssPresetEnv from "postcss-preset-env";
 import UnoCSS from "unocss/vite";
 import { viteServeInfoPlugin } from "./vite/plugin/vite-serve-info";
-import { cdn } from "./vite/plugin/cdn";
 import VueDevTools from "vite-plugin-vue-devtools";
 import { name, version } from "./vite/plugin/app-info";
-import cesium from "vite-plugin-cesium";
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -66,13 +64,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				iconDirs: [path.resolve(__dirname, "./src/assets/icons")],
 				symbolId: "icon-[dir]-[name]"
 			}),
-			viteEnv.VITE_CDN && cdn,
 			UnoCSS(),
 			viteServeInfoPlugin(),
-			mode === "development" && VueDevTools(),
-			cesium()
+			mode === "development" && VueDevTools()
 		],
 		css: {
+			preprocessorOptions: {
+				scss: {
+					api: "modern-compiler"
+				}
+			},
 			// * postcss后处理器
 			postcss: {
 				// * postcssPresetEnv css语法降级

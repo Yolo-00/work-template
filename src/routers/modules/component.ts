@@ -12,20 +12,8 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 			icon: "xianxingdiqiu",
 			sort: 3
 		},
-		redirect: "/component/codeEditor",
+		redirect: "/component/wangEditor",
 		children: [
-			{
-				path: "/component/codeEditor",
-				name: "CodeEditor",
-				component: "/components/codeEditor/index",
-				meta: {
-					title: "代码编辑器",
-					localeKey: "router.component.codeEditor",
-					key: "codeEditor",
-					icon: "xianxingfeiji",
-					sort: 1
-				}
-			},
 			{
 				path: "/component/wangEditor",
 				name: "WangEditor",
@@ -35,7 +23,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					localeKey: "router.component.wangEditor",
 					key: "wangEditor",
 					icon: "xianxinglvhangriji",
-					sort: 2
+					sort: 1
 				}
 			},
 			{
@@ -47,7 +35,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					localeKey: "router.component.mdEditor",
 					key: "mdEditor",
 					icon: "xianxingdaoyu",
-					sort: 3
+					sort: 2
 				}
 			},
 			{
@@ -59,19 +47,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					localeKey: "router.component.preview",
 					key: "preview",
 					icon: "xianxingfanchuan",
-					sort: 4
-				}
-			},
-			{
-				path: "/component/masonry",
-				name: "Masonry",
-				component: "/components/masonry/index",
-				meta: {
-					title: "瀑布流布局",
-					localeKey: "router.component.masonry",
-					key: "masonry",
-					icon: "xianxingzijiayou",
-					sort: 5
+					sort: 3
 				}
 			},
 			{
@@ -83,44 +59,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					localeKey: "router.component.qrCode",
 					key: "qrCode",
 					icon: "xianxingtianqiyubao",
-					sort: 6
-				}
-			},
-			{
-				path: "/component/fragment",
-				name: "Fragment",
-				component: "/components/fragment/index",
-				meta: {
-					title: "碎片化图片",
-					localeKey: "router.component.fragment",
-					key: "fragment",
-					noKeepAlive: true,
-					icon: "xianxingditu",
-					sort: 7
-				}
-			},
-			{
-				path: "/component/splitPanel",
-				name: "SplitPanel",
-				component: "/components/splitPanel/index",
-				meta: {
-					title: "分割面板",
-					localeKey: "router.component.splitPanel",
-					key: "splitPanel",
-					icon: "xianxingxiarilengyin",
-					sort: 8
-				}
-			},
-			{
-				path: "/component/draggable",
-				name: "Draggable",
-				component: "/components/draggable/index",
-				meta: {
-					title: "拖动面板",
-					localeKey: "router.component.draggable",
-					key: "draggable",
-					icon: "xianxingzijiayou",
-					sort: 9
+					sort: 4
 				}
 			},
 			{
@@ -132,7 +71,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					localeKey: "router.component.jsonPretty",
 					key: "jsonPretty",
 					icon: "xianxingyoulun",
-					sort: 10
+					sort: 5
 				}
 			},
 			{
@@ -144,19 +83,7 @@ const componentRouter: Array<CustomRouteRecordRaw> = [
 					localeKey: "router.component.virtualTable",
 					key: "virtualTable",
 					icon: "xianxingzijiayou",
-					sort: 11
-				}
-			},
-			{
-				path: "/component/coverImageAdjuster",
-				name: "coverImageAdjuster",
-				component: "/components/coverImageAdjuster/index",
-				meta: {
-					title: "图片封面位置调整组件",
-					localeKey: "router.component.coverImageAdjuster",
-					key: "coverImageAdjuster",
-					icon: "xianxingditu",
-					sort: 11
+					sort: 6
 				}
 			}
 		]

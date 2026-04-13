@@ -2,8 +2,7 @@ export default {
 	login: {
 		login: "Login",
 		account: "Account",
-		password: "password",
-		auth: "Github Auth"
+		password: "password"
 	},
 	layout: {
 		exit: "Exit"
@@ -17,18 +16,12 @@ export default {
 		dataScreen: "Data Screen",
 		component: {
 			module: "Components",
-			codeEditor: "Code Editor",
 			wangEditor: "Rich Text Editor",
 			mdEditor: "Markdown Editor",
 			preview: "File Preview",
-			masonry: "Masonry Layout",
 			qrCode: "QR Code Generator",
-			fragment: "Fragment Image",
-			splitPanel: "Split Panel",
-			draggable: "Draggable Panel",
 			jsonPretty: "JSON Prettifier",
-			virtualTable: "Virtual Table",
-			coverImageAdjuster: "Cover Image Adjuster"
+			virtualTable: "Virtual Table"
 		},
 		menu: {
 			module: "Nested Menu",

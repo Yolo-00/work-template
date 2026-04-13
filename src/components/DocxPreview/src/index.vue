@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import VueOfficeDocx from "@vue-office/docx";
-import "@vue-office/docx/lib/index.css";
+import VueOfficeDocx from "@vue-office/docx/lib/v3/index.js";
+import "@vue-office/docx/lib/v3/index.css";
 import { ElNotification } from "element-plus";
 import { RenderOptions } from "./types";
 

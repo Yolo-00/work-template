@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import VuePdfEmbed from "vue-pdf-embed";
 
-const pdfUrl = "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf";
+const pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
 
 const dialogVisible = ref(false);
 const loading = ref(false);

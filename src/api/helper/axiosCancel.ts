@@ -39,7 +39,7 @@ export class AxiosCanceler {
 		if (pendingMap.has(url)) {
 			// 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
 			const cancel = pendingMap.get(url);
-			cancel && cancel();
+			if (cancel) cancel();
 			pendingMap.delete(url);
 		}
 	}
@@ -49,7 +49,7 @@ export class AxiosCanceler {
 	 */
 	removeAllPending() {
 		pendingMap.forEach(cancel => {
-			cancel && isFunction(cancel) && cancel();
+			if (cancel && isFunction(cancel)) cancel();
 		});
 		pendingMap.clear();
 	}

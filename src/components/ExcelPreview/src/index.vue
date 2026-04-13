@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import VueOfficeExcel from "@vue-office/excel";
-import "@vue-office/excel/lib/index.css";
+import VueOfficeExcel from "@vue-office/excel/lib/v3/index.js";
+import "@vue-office/excel/lib/v3/index.css";
 import { ElNotification } from "element-plus";
 import { type ExcelRenderOptions } from "./types";
 
